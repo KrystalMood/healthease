@@ -20,7 +20,7 @@ export default function IndexHero(): JSX.Element {
         alignItems="center"
         justifyContent="space-between"
       >
-        <VStack align="flex-start" spacing={6} maxW="xl">
+        <VStack align="flex-start" spacing={4} maxW="xl">
           <Text fontSize="lg" fontWeight="medium" color="gray.600">
             Welcome to our healthy site
           </Text>
@@ -43,9 +43,11 @@ export default function IndexHero(): JSX.Element {
         </VStack>
         <Box display={{ base: "none", md: "block" }}>
           <Image
-            src=""
+            src="/template.jpeg"
             alt="Gambar uwong"
             objectFit="cover"
+            w={'30rem'}
+            h={'30rem'}
             borderRadius="md"
           />
         </Box>
