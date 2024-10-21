@@ -3,7 +3,8 @@ import Footer from "~/common/footer";
 import Header from "~/common/header";
 import IndexFeatures from "~/components/index/features";
 import IndexHero from "~/components/index/hero";
-import IndexReview from "~/components/index/review";
+import IndexLogo from "~/components/index/logo";
+import IndexIntroduction from "~/components/index/introduction";
 import IndexWhyUs from "~/components/index/why-us";
 
 export const meta: MetaFunction = () => {
@@ -18,9 +19,10 @@ export default function Index() {
     <>
       <Header />
       <IndexHero />
-      <IndexReview />
+      <IndexLogo />
+      <IndexIntroduction />
       <IndexFeatures />
-      {/* <IndexWhyUs/> */}
+      {/* <IndexWhyUs /> */}
       <Footer />
     </>
   );

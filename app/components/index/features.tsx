@@ -63,8 +63,8 @@ const FeatureCard = ({ feature }: { feature: FeatureProps }) => {
     >
       <div className="relative z-10 flex flex-col justify-between h-full">
         <div>
-          <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
-            <CheckCircle2 className="h-6 w-6 text-blue-600" />
+          <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100">
+            <CheckCircle2 className="h-6 w-6 text-emerald-600" />
           </div>
           <h3 className="mb-2 text-xl font-bold text-gray-900">
             {feature.title}
@@ -73,7 +73,7 @@ const FeatureCard = ({ feature }: { feature: FeatureProps }) => {
         </div>
 
         <div
-          className={`mt-4 flex items-center text-blue-600 transition-all duration-300 ${
+          className={`mt-4 flex items-center text-emerald-600 transition-all duration-300 ${
             isHovered ? "translate-x-2" : ""
           }`}
         >
@@ -91,11 +91,11 @@ export default function IndexFeatures(): JSX.Element {
     <div className="min-h-screen bg-gray-50 py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-base font-semibold uppercase tracking-wide text-blue-600">
+          <h2 className="text-base font-semibold uppercase tracking-wide text-emerald-600">
             Comprehensive Healthcare
           </h2>
           <p className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
-            Everything you need for better health
+            Everything you need for <span className="text-emerald-600">better</span> health
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-xl text-gray-500 italic">
             Access professional healthcare services and personalized wellness

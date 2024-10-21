@@ -5,7 +5,7 @@ export default function HealthcareHero() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
       <div className="min-h-screen max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-12">
         <div className="flex flex-col space-y-8 max-w-xl pt-20 md:pt-0">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 bg-emerald-50 shadow-sm px-4 py-4 rounded-xl w-fit">
             <div className="w-2 h-2 rounded-full bg-emerald-600"></div>
             <span className="text-lg font-medium text-emerald-700">
               Layanan Kesehatan Terpercaya
@@ -62,14 +62,14 @@ export default function HealthcareHero() {
             alt="Tim Medis Profesional"
             className="w-[500px] h-[500px] object-cover rounded-2xl relative z-10 shadow-xl"
           />
-          {/* <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-full shadow-lg z-20">
+          <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-full shadow-lg z-20">
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              <span className="text-sm font-medium text-gray-900">
+              <span className="text-sm font-lg font-semibold text-gray-800">
                 Pelayanan Tersedia
               </span>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
