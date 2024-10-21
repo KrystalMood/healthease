@@ -1,30 +1,14 @@
-import { Box, Button, Flex, Heading, Text, Stack } from "@chakra-ui/react";
 import { Link } from "@remix-run/react";
 
 export default function Header(): JSX.Element {
   return (
-    <Box
-      as="header"
-      bg="white"
-      py={4}
-      boxShadow="sm"
-      position="fixed"
-      top={0}
-      left={0}
-      right={0}
-      zIndex={50}
-    >
-      <Flex
-        maxW="container.xl"
-        mx="auto"
-        px={4}
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <Heading as="h1" fontSize="2xl" color="#00A896">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white py-4 shadow-sm">
+      <div className="mx-auto max-w-7xl px-4 flex items-center justify-between">
+        <h1 className="text-2xl font-bold tracking-tight text-emerald-600">
           HealthEase
-        </Heading>
-        <Stack as="nav" direction="row" spacing={12}>
+        </h1>
+        
+        <nav className="flex space-x-12">
           {[
             "Profile",
             "Jaminan Kesehatan",
@@ -35,26 +19,17 @@ export default function Header(): JSX.Element {
             <Link
               key={navigasi}
               to={`/${navigasi.toLowerCase().replace(/\s+/g, "-")}`}
+              className="text-gray-800 font-medium hover:text-emerald-600 hover:underline transition-colors duration-200"
             >
-              <Text
-                color="black"
-                fontWeight="medium"
-                _hover={{ textDecoration: "underline" }}
-              >
-                {navigasi}
-              </Text>
+              {navigasi}
             </Link>
           ))}
-        </Stack>
-        <Button
-          bg="#00A896"
-          color="white"
-          _hover={{ bg: "blue.600" }}
-          size="sm"
-        >
+        </nav>
+
+        <button className="bg-emerald-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-emerald-700 transition-colors duration-200">
           Contact Us
-        </Button>
-      </Flex>
-    </Box>
+        </button>
+      </div>
+    </header>
   );
 }
