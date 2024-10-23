@@ -8,6 +8,9 @@ import IndexIntroduction from "~/components/index/introduction";
 import IndexWhyUs from "~/components/index/why-us";
 import IndexAdvantage from "~/components/index/advantage";
 import IndexSupport from "~/components/index/support";
+import IndexDokter from "~/components/index/dokter";
+import IndexReview from "~/components/index/review";
+import IndexCTA from "~/components/index/cta";
 
 export const meta: MetaFunction = () => {
   return [
@@ -26,7 +29,9 @@ export default function Index() {
       <IndexFeatures />
       <IndexAdvantage />
       <IndexSupport />
-      {/* <IndexWhyUs /> */}
+      <IndexDokter />
+      <IndexReview />
+      <IndexCTA />
       <Footer />
     </>
   );

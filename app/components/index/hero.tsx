@@ -40,7 +40,6 @@ export default function HealthcareHero() {
 
           <div className="flex items-center space-x-8 pt-4">
             <div className="flex flex-col">
-              
               <span className="text-3xl font-bold text-gray-900">24/7</span>
               <span className="text-sm text-gray-600">Layanan Darurat</span>
             </div>

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import React from "react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
 interface FeatureProps {
   id: number;
@@ -12,37 +12,37 @@ const featureList: FeatureProps[] = [
   {
     id: 1,
     image: "template.jpeg",
-    title: "Virtual Health Consultations",
+    title: "Konsultasi Kesehatan Virtual",
     subtitle:
-      "Schedule appointments with healthcare professionals online from the comfort of your home.",
+      "Jadwalkan janji temu dengan profesional kesehatan secara online dari kenyamanan rumah Anda.",
   },
   {
     id: 2,
     image: "template.jpeg",
-    title: "Mental Health Support",
+    title: "Dukungan Kesehatan Mental",
     subtitle:
-      "Services include therapy sessions, stress management, and mental health resources.",
+      "Layanan termasuk sesi terapi, manajemen stres, dan sumber daya kesehatan mental.",
   },
   {
     id: 3,
     image: "template.jpeg",
-    title: "Personalized Health Plans",
+    title: "Rencana Kesehatan yang Dipersonalisasi",
     subtitle:
-      "Focus areas include diet, exercise, mental well-being, and chronic condition management.",
+      "Area fokus termasuk diet, olahraga, kesejahteraan mental, dan manajemen kondisi kronis.",
   },
   {
     id: 4,
     image: "template.jpeg",
-    title: "Chronic Disease Management",
+    title: "Manajemen Penyakit Kronis",
     subtitle:
-      "Ongoing support and care for managing chronic conditions such as diabetes, hypertension, and heart disease.",
+      "Dukungan dan perawatan berkelanjutan untuk mengelola kondisi kronis seperti diabetes, hipertensi, dan penyakit jantung.",
   },
   {
     id: 5,
     image: "template.jpeg",
-    title: "Preventive Care & Wellness Checkups",
+    title: "Perawatan Pencegahan & Pemeriksaan Kesehatan",
     subtitle:
-      "Routine screenings and checkups designed to prevent illness and promote long-term health.",
+      "Pemeriksaan rutin dan cek kesehatan yang dirancang untuk mencegah penyakit dan meningkatkan kesehatan jangka panjang.",
   },
   {
     id: 6,
@@ -53,74 +53,98 @@ const featureList: FeatureProps[] = [
 ];
 
 const FeatureCard = ({ feature }: { feature: FeatureProps }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <div
-      className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="relative z-10 flex flex-col justify-between h-full">
-        <div>
-          <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100">
+    <div className="bg-white rounded-xl p-8 relative">
+      <div className="absolute inset-0 bg-emerald-100 rounded-xl transform rotate-2"></div>
+      <div className="relative bg-white rounded-xl p-6 shadow-lg">
+        <div className="flex items-center gap-4 mb-4">
+          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-100">
             <CheckCircle2 className="h-6 w-6 text-emerald-600" />
           </div>
-          <h3 className="mb-2 text-xl font-bold text-gray-900">
+          <h3 className="text-xl font-bold text-gray-800 tracking-tight">
             {feature.title}
           </h3>
-          <p className="text-gray-600">{feature.subtitle}</p>
         </div>
 
-        <div
-          className={`mt-4 flex items-center text-emerald-600 transition-all duration-300 ${
-            isHovered ? "translate-x-2" : ""
-          }`}
-        >
-          <span className="font-medium">Learn more</span>
+        <p className="text-gray-600 leading-relaxed mb-4 pl-16">
+          {feature.subtitle}
+        </p>
+
+        <div className="flex items-center text-emerald-600 pl-16">
+          <span className="font-medium">Pelajari lebih lanjut</span>
           <ArrowRight className="ml-2 h-4 w-4" />
         </div>
       </div>
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
     </div>
   );
 };
 
 export default function IndexFeatures(): JSX.Element {
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-base font-semibold uppercase tracking-wide text-emerald-600">
-            Comprehensive Healthcare
-          </h2>
-          <p className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
-            Everything you need for <span className="text-emerald-600">better</span> health
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto px-4 py-16 w-[90vw]">
+        <div className="flex flex-col lg:flex-row justify-between gap-12 mb-20">
+          <p className="max-w-2xl text-xl md:text-2xl text-gray-600 leading-relaxed font-light italic">
+            Akses layanan kesehatan profesional dan solusi kesejahteraan yang
+            dipersonalisasi, semuanya dirancang untuk memberikan Anda perawatan
+            komprehensif yang disesuaikan dengan kebutuhan dan gaya hidup unik
+            Anda.
           </p>
-          <p className="mx-auto mt-4 max-w-2xl text-xl text-gray-500 italic">
-            Access professional healthcare services and personalized wellness
-            solutions, all in one place
-          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight max-w-xl tracking-tight">
+            Temukan solusi kesehatan
+            <span className="text-emerald-600"> lengkap kami.</span>
+          </h1>
         </div>
 
-        <div className="relative mt-12">
-          <div
-            className="absolute inset-0 flex items-center"
-            aria-hidden="true"
-          >
-            <div className="w-full border-t border-gray-200" />
-          </div>
-          <div className="relative flex justify-center">
-            <span className="bg-gray-50 px-3 text-lg font-medium text-gray-900">
-              Our Services
-            </span>
-          </div>
-        </div>
-
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {featureList.map((feature) => (
             <FeatureCard key={feature.id} feature={feature} />
           ))}
+        </div>
+
+        <div className="mt-20 flex flex-col lg:flex-row items-center justify-between gap-12">
+          <div className="lg:w-1/2">
+            <div className="relative">
+              <div className="absolute inset-0 bg-emerald-200 rounded-xl transform -rotate-3"></div>
+              <img
+                src="templateAnime.jpg"
+                alt="Layanan Kesehatan"
+                className="relative rounded-xl shadow-xl w-full h-[400px] object-cover transform transition-transform duration-300"
+              />
+            </div>
+          </div>
+
+          <div className="lg:w-1/2">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 tracking-tight mb-6">
+              Mengapa Memilih Layanan Kesehatan Kami?
+            </h2>
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 font-semibold">
+                  1
+                </span>
+                <p className="text-lg text-gray-600">
+                  Penyedia layanan kesehatan profesional tersedia 24/7
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 font-semibold">
+                  2
+                </span>
+                <p className="text-lg text-gray-600">
+                  Rencana perawatan yang dipersonalisasi sesuai kebutuhan Anda
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 font-semibold">
+                  3
+                </span>
+                <p className="text-lg text-gray-600">
+                  Pemantauan dan dukungan kesehatan yang komprehensif
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
