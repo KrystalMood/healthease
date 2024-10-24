@@ -26,16 +26,15 @@ const accordionList: AccordionProps[] = [
 
 export default function IndexSupport() {
   return (
-    <div className="min-h-[120vh] bg-gradient-to-br from-emerald-950 to-emerald-900">
-      <div className="w-[90vw] mx-auto px-6 lg:px-8 h-[120vh] items-center">
-        <div className="flex flex-col lg:flex-row items-center justify-between h-full gap-16">
-
+    <div className="h-[170vh] bg-gradient-to-br from-emerald-950 to-emerald-900">
+      <div className="w-[90vw] mx-auto px-6 lg:px-8 h-full items-center">
+        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between h-full gap-16">
           <div className="lg:w-1/2 h-full relative hidden lg:block">
             <div className="absolute inset-0 bg-emerald-900/10 backdrop-blur-sm rounded-3xl" />
             <img
               src="templateAnime.jpg"
               alt="Support Image"
-              className="h-full w-full object-cover shadow-2xl"
+              className="hidden md:block h-full w-full object-cover shadow-2xl"
             />
           </div>
 
