@@ -33,12 +33,18 @@ export default function LayananIntro() {
             className="z-10 relative rounded-md shadow-md object-cover hover:-rotate-3 transition-all duration-300"
           />
           <div className="absolute inset-0 rotate-3 bg-green-400 rounded-md"></div>
+          <div className="absolute inset-0 bg-gradient-to-l opacity-50 from-green-400 via-transparent to-transparent rounded-md z-10"></div>
         </div>
 
         <div className="relative ml-24 shadow-lg px-12 py-8 rounded-xl border-2 border-gray-100 flex flex-col">
           <h2 className=" text-5xl font-bold">Fitur yang kami tawarkan</h2>
-          <p className=" py-6">
-            Fitur yang terdapat pada <span>HealthEase</span> diantaranya adalah
+          <p className=" py-6 max-w-xl">
+            Temukan keunggulan{" "}
+            <span className="text-emerald-600">HealthEase</span>, dengan
+            fitur-fitur modern yang siap mendukung kebutuhan kesehatan Anda.
+            Dari teknologi AI hingga kemudahan akses layanan kesehatan, kami
+            hadir untuk memberikan pengalaman terbaik dalam merawat kesehatan
+            Anda. Mari jelajahi dan nikmati kemudahan yang kami tawarkan.
           </p>
           <div className="space-y-7 text-xl z-10">
             {listLayanan.map((list, index) => (

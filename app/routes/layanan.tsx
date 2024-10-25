@@ -1,7 +1,10 @@
 import { MetaFunction } from "@remix-run/react";
+import Footer from "~/common/footer";
 import Header from "~/common/header";
+import LayananFitur from "~/components/layanan/fitur";
 import LayananHero from "~/components/layanan/hero";
 import LayananIntro from "~/components/layanan/intro";
+import LayananOutro from "~/components/layanan/outro";
 
 export const meta: MetaFunction = () => {
   return [
@@ -15,6 +18,9 @@ export default function LayananPage() {
       <Header />
       <LayananHero />
       <LayananIntro />
+      <LayananFitur />
+      <LayananOutro />
+      <Footer />
     </>
   );
 }
