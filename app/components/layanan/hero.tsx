@@ -22,7 +22,13 @@ export default function LayananHero() {
             kesehatan kini lebih mudah diakses.
           </p>
           <hr className="border-t-2 border-gray-200" />
-          <div className="flex space-x-6 opacity-50">{logo}</div>
+          <div className="flex space-x-6">
+            {logo.map((icon) => (
+              <div className="opacity-50 hover:scale-125 transition-all duration-300">
+                {icon}
+              </div>
+            ))}
+          </div>
           <button className="flex items-center justify-between text-lg px-6 py-2 w-full lg:w-fit text-gray-600 shadow-md border-2 border-emerald-600 rounded-lg bg-gradient-to-br from-slate-50 to-gray-50 font-medium hover:bg-emerald-500 hover:text-black hover:scale-105 transition-all duration-300">
             Pelajar lebih lanjut{" "}
             <Info className="text-gray-600 opacity-90 ml-4" size={18} />

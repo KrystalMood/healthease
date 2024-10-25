@@ -9,6 +9,18 @@ const listLayanan = [
   "Pengingat Obat",
 ];
 export default function LayananIntro() {
+  const scrollToSection = (index: number) => {
+    const featureElements = document.querySelectorAll(
+      ".group.relative.rounded-2xl"
+    );
+
+    if (featureElements[index]) {
+      featureElements[index].scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  };
   return (
     <div className="min-h-screen">
       <div className="flex flex-col lg:flex-row justify-center text-center lg:text-start lg:justify-between max-w-7xl mx-auto items-center">
@@ -51,6 +63,7 @@ export default function LayananIntro() {
               <>
                 <button
                   key={list}
+                  onClick={() => scrollToSection(index)}
                   className="flex items-center justify-between w-full hover:translate-x-4 transition-all duration-300"
                 >
                   <div className="flex">
