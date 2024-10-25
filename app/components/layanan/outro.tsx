@@ -43,7 +43,7 @@ export default function LayananOutro() {
             </div>
 
             <div className="flex items-center justify-start space-x-4 pt-4">
-              <button className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 rounded-xl shadow-lg text-white font-semibold text-lg transition-all duration-300 hover:scale-105">
+              <button className="px-8 py-4 w-full lg:w-fit bg-emerald-600 hover:bg-emerald-700 rounded-xl shadow-lg text-white font-semibold text-lg transition-all duration-300 hover:scale-105">
                 Daftar Sekarang
               </button>
               <button className="p-4 border-2 border-emerald-600 hover:border-emerald-700 rounded-xl shadow-lg text-emerald-600 hover:text-emerald-700 transition-all duration-300 hover:scale-105">
@@ -52,7 +52,7 @@ export default function LayananOutro() {
             </div>
           </div>
         </div>
-        <div className="relative">
+        <div className="relative hidden lg:block">
           <img
             src="templateAnime.jpg"
             alt=""

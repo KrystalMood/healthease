@@ -11,7 +11,7 @@ const listLayanan = [
 export default function LayananIntro() {
   return (
     <div className="min-h-screen">
-      <div className="flex justify-between max-w-7xl mx-auto items-center">
+      <div className="flex flex-col lg:flex-row justify-center text-center lg:text-start lg:justify-between max-w-7xl mx-auto items-center">
         <h1 className="text-6xl font-bold py-16">
           Layanan Kesehatan Terlengkap untuk Kebutuhan Anda
         </h1>
@@ -25,7 +25,7 @@ export default function LayananIntro() {
           yang kami tawarkan dan temukan yang paling sesuai untuk Anda.
         </p>
       </div>
-      <div className="flex justify-center items-center max-[90vw] mx-auto">
+      <div className="hidden lg:flex justify-center items-center max-[90vw] mx-auto">
         <div className="relative w-fit">
           <img
             src="templateAnime.jpg"

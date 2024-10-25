@@ -3,8 +3,8 @@ import { Dot, HeartPulse, Info, MonitorCheck, Stethoscope } from "lucide-react";
 const logo: JSX.Element[] = [<HeartPulse />, <Stethoscope />, <MonitorCheck />];
 export default function LayananHero() {
   return (
-    <div className="h-screen bg-gradient-to-br from-slate-50 to-gray-50">
-      <div className=" flex max-w-7xl mx-auto items-center justify-between h-full text-black ">
+    <div className="h-screen bg-gradient-to-br from-slate-50 to-gray-50 px-4 md:px-6">
+      <div className=" flex justify-center max-w-7xl mx-auto items-center lg:justify-between h-full text-black ">
         <div className="flex flex-col space-y-8">
           <h5 className="text-lg font-medium bg-emerald-100 text-emerald-500 w-fit px-4 py-2 rounded-lg flex  items-center">
             <Dot size={40} />
@@ -23,12 +23,12 @@ export default function LayananHero() {
           </p>
           <hr className="border-t-2 border-gray-200" />
           <div className="flex space-x-6 opacity-50">{logo}</div>
-          <button className="flex items-center justify-between text-lg px-6 py-2 w-fit text-gray-600 shadow-md border-2 border-emerald-600 rounded-lg bg-gradient-to-br from-slate-50 to-gray-50 font-medium hover:bg-emerald-500 hover:text-black hover:scale-105 transition-all duration-300">
+          <button className="flex items-center justify-between text-lg px-6 py-2 w-full lg:w-fit text-gray-600 shadow-md border-2 border-emerald-600 rounded-lg bg-gradient-to-br from-slate-50 to-gray-50 font-medium hover:bg-emerald-500 hover:text-black hover:scale-105 transition-all duration-300">
             Pelajar lebih lanjut{" "}
             <Info className="text-gray-600 opacity-90 ml-4" size={18} />
           </button>
         </div>
-        <div className="relative">
+        <div className="relative hidden lg:block">
           <img
             src="templateAnime.jpg"
             alt="Layanan HealthEase"
