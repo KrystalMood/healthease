@@ -1,6 +1,7 @@
 import { MetaFunction } from "@remix-run/react";
 import Footer from "~/common/footer";
 import Header from "~/common/header";
+import IndexContentSection from "~/components/informasi-publik/content";
 import InformasiHero from "~/components/informasi-publik/hero";
 
 export const meta: MetaFunction = () => {
@@ -14,6 +15,7 @@ export default function InformasiPage() {
     <>
       <Header />
       <InformasiHero />
+      <IndexContentSection />
       <Footer />
     </>
   );

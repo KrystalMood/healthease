@@ -34,7 +34,7 @@ export default function Header(): JSX.Element {
   return (
     // Buat Desktop
     <header className="fixed top-0 left-0 right-0 z-50 bg-white py-4 shadow-md">
-      <div className="mx-auto max-w-7xl h-10 px-2 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl h-7 px-2 flex items-center justify-between">
         <h1 className="ml-4 lg:ml-0 text-2xl font-bold tracking-tight text-emerald-600">
           HealthEase
         </h1>
@@ -59,10 +59,10 @@ export default function Header(): JSX.Element {
         </nav>
 
         <div className="hidden lg:flex space-x-4">
-          <button className="border border-1 border-emerald-500 text-gray-700 font-semibold  px-6 py-3 shadow-md rounded-md text-sm hover:bg-emerald-500 hover:scale-105 transition-all duration-300">
+          <button className="border border-1 border-emerald-500 text-gray-700 font-semibold  px-6 py-2 shadow-md rounded-md text-sm hover:bg-emerald-500 hover:scale-105 transition-all duration-300">
             Daftar
           </button>
-          <button className="bg-emerald-500 font-semibold text-white px-6 py-3 shadow-md rounded-md text-sm hover:bg-emerald-800 hover:scale-105 transition-all duration-300">
+          <button className="bg-emerald-500 font-semibold text-white px-6 py-2 shadow-md rounded-md text-sm hover:bg-emerald-800 hover:scale-105 transition-all duration-300">
             Reservasi
           </button>
         </div>
