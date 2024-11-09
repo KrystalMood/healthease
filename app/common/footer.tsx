@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { useState } from "react";
 
 export default function Footer(): JSX.Element {
