@@ -1,177 +1,44 @@
 import { Link } from "@remix-run/react";
-import { ChevronRight } from "lucide-react";
-import { useState } from "react";
 
 export default function Footer(): JSX.Element {
-  const [isActive, setIsActive] = useState(false);
-
-  const handleClick = () => {
-    setIsActive(!isActive);
-  };
+  const footer_menu = (menu: string, index: number) => (
+    <li key={index} className="group h-fit w-fit text-slate-50 transition-all duration-300 ease-in-out">
+      <span className="lg:bg-gradient-to-r lg:from-slate-50 lg:to-slate-50 lg:bg-[length:0%_0.125rem] lg:bg-left-bottom lg:bg-no-repeat lg:transition-all lg:duration-500 lg:ease-out lg:group-hover:bg-[length:100%_0.125rem]">
+        <Link to={`/${menu.replace(/ /g, "-").toLowerCase()}`}>{menu}</Link>
+      </span>
+    </li>
+  );
 
   return (
-    <footer className="w-full bg-emerald-900 py-4 md:py-12">
-      <div className="hidden max-w-7xl mx-auto px-4 md:flex items-start justify-between text-white">
-        <div>
-          <h2 className="text-2xl font-bold">HealthEase</h2>
-        </div>
-
-        <div className="flex flex-col space-y-3">
-          <Link to="/profile" className="hover:text-emerald-200">
-            Profile
-          </Link>
-          <Link to="/jaminan-kesehatan" className="hover:text-emerald-200">
-            Jaminan Kesehatan
-          </Link>
-          <Link to="/layanan" className="hover:text-emerald-200">
-            Layanan
-          </Link>
-          <Link to="/informasi-publik" className="hover:text-emerald-200">
-            Informasi Publik
-          </Link>
-          <Link to="/tautan" className="hover:text-emerald-200">
-            Tautan
-          </Link>
-        </div>
-
-        <div className="flex flex-col space-y-3">
-          <h3 className="text-xl font-bold mb-2">About Us</h3>
-          <Link to="/our-story" className="hover:text-emerald-200">
-            Our Story
-          </Link>
-          <Link to="/why-healthease" className="hover:text-emerald-200">
-            Why HealthEase?
-          </Link>
-          <Link to="/testimonial" className="hover:text-emerald-200">
-            Testimonial
-          </Link>
-        </div>
-
-        <div className="flex flex-col space-y-3">
-          <h3 className="text-xl font-bold mb-2">Support</h3>
-          <Link to="/faq" className="hover:text-emerald-200">
-            FAQ
-          </Link>
-          <Link to="/contact" className="hover:text-emerald-200">
-            Contact Us
-          </Link>
-          <Link to="/help" className="hover:text-emerald-200">
-            Help Center
-          </Link>
-        </div>
-
-        <div className="flex flex-col space-y-6">
-          <div>
-            <h3 className="text-xl font-bold mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
-              <div className="w-8 h-8 bg-white/20 rounded hover:bg-white/30 cursor-pointer"></div>
-              <div className="w-8 h-8 bg-white/20 rounded hover:bg-white/30 cursor-pointer"></div>
-              <div className="w-8 h-8 bg-white/20 rounded hover:bg-white/30 cursor-pointer"></div>
-            </div>
+    <footer className="mx-auto w-full bg-emerald-600 px-[5%] py-14 text-slate-50">
+      <section className="flex flex-col gap-x-10 lg:flex-row">
+        <address className="flex flex-col items-center not-italic lg:w-1/3 lg:items-start">
+          <img src="/icon.png" alt="Logo Healthease" className="w-64 font-bold italic" loading="lazy" />
+          <h3 className="mt-7 cursor-default text-2xl font-semibold">
+            HealthEase
+          </h3>
+          <h5 className="mt-4 cursor-default text-center text-base font-thin lg:text-left">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam tempore
+            reiciendis maxime itaque ab fugiat quod quaerat placeat repellat
+            sint!
+          </h5>
+        </address>
+        <nav className="mt-14 grid grid-cols-1 gap-8 lg:mt-0 lg:w-2/3 lg:grid-cols-2" aria-label="Navigasi">
+          <h3 className="cursor-default text-xl font-extrabold tracking-wide lg:text-2xl">
+            Lorem Ipsum
+            <br />
+            Dolor Sit Amet
+          </h3>
+          <div className="grid grid-cols-2 gap-8">
+            <ul className="flex flex-col gap-y-3" aria-label="Informasi">
+              {["Profil", "Jaminan Kesehatan", "Layanan", "Informasi Publik"].map((menu, index) => footer_menu(menu, index))}
+            </ul>
+            <ul className="flex flex-col gap-y-3" aria-label="Bantuan">
+              {["Tentang Kami", "FAQ", "Pusat Bantuan"].map((menu, index) => footer_menu(menu, index))}
+            </ul>
           </div>
-
-          <div className="flex items-center space-x-3 text-sm">
-            <Link to="/privacy" className="hover:text-emerald-200">
-              Privacy Policy
-            </Link>
-            <span>|</span>
-            <Link to="/terms" className="hover:text-emerald-200">
-              Terms of Service
-            </Link>
-            <span>|</span>
-            <Link to="/cookies" className="hover:text-emerald-200">
-              Cookie Policy
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Iki mobile :v */}
-      <div className="flex flex-col md:hidden space-y-3 px-4 text-white">
-        <button
-          className="flex w-full items-center justify-between px-4"
-          onClick={handleClick}
-        >
-          <h2 className="text-4xl font-bold">HealthEase</h2>
-          <ChevronRight
-            size={40}
-            className={`${isActive === true ? "rotate-180" : ""}}`}
-          />
-        </button>
-
-        <div
-          className={`flex flex-col space-y-3 ml-4 w-full text-2xl font-medium ${
-            isActive === true ? "block" : "hidden"
-          }`}
-        >
-          <Link to="/profile" className="hover:text-emerald-200">
-            Profile
-          </Link>
-          <Link to="/jaminan-kesehatan" className="hover:text-emerald-200">
-            Jaminan Kesehatan
-          </Link>
-          <Link to="/layanan" className="hover:text-emerald-200">
-            Layanan
-          </Link>
-          <Link to="/informasi-publik" className="hover:text-emerald-200">
-            Informasi Publik
-          </Link>
-          <Link to="/tautan" className="hover:text-emerald-200">
-            Tautan
-          </Link>
-        </div>
-
-        <div className="flex flex-col space-y-3 ml-4">
-          <h3 className="text-xl font-bold mb-2">About Us</h3>
-          <Link to="/our-story" className="hover:text-emerald-200">
-            Our Story
-          </Link>
-          <Link to="/why-healthease" className="hover:text-emerald-200">
-            Why HealthEase?
-          </Link>
-          <Link to="/testimonial" className="hover:text-emerald-200">
-            Testimonial
-          </Link>
-        </div>
-
-        <div className="flex flex-col space-y-3 ml-4">
-          <h3 className="text-xl font-bold mb-2">Support</h3>
-          <Link to="/faq" className="hover:text-emerald-200">
-            FAQ
-          </Link>
-          <Link to="/contact" className="hover:text-emerald-200">
-            Contact Us
-          </Link>
-          <Link to="/help" className="hover:text-emerald-200">
-            Help Center
-          </Link>
-        </div>
-
-        <div className="flex flex-col space-y-6">
-          <div>
-            <h3 className="text-xl font-bold mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
-              <div className="w-8 h-8 bg-white/20 rounded hover:bg-white/30 cursor-pointer"></div>
-              <div className="w-8 h-8 bg-white/20 rounded hover:bg-white/30 cursor-pointer"></div>
-              <div className="w-8 h-8 bg-white/20 rounded hover:bg-white/30 cursor-pointer"></div>
-            </div>
-          </div>
-
-          <div className="flex items-center space-x-3 text-sm">
-            <Link to="/privacy" className="hover:text-emerald-200">
-              Privacy Policy
-            </Link>
-            <span>|</span>
-            <Link to="/terms" className="hover:text-emerald-200">
-              Terms of Service
-            </Link>
-            <span>|</span>
-            <Link to="/cookies" className="hover:text-emerald-200">
-              Cookie Policy
-            </Link>
-          </div>
-        </div>
-      </div>
+        </nav>
+      </section>
     </footer>
   );
 }

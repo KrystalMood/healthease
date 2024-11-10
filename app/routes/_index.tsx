@@ -15,11 +15,11 @@ import Footer from "~/common/footer";
 export const meta: MetaFunction = () => {
   return [
     { title: "Beranda | HealthEase" },
-    { name: "description", content: "" },
+    { name: "description", content: "Selamat datang di HealthEase, solusi digital tepercaya yang menyediakan informasi dan layanan kesehatan sesuai kebutuhan Anda." },
     { property: "og:title", content: "Beranda | HealthEase" },
-    { property: "og:description", content: "" },
+    { property: "og:description", content: "Selamat datang di HealthEase, solusi digital tepercaya yang menyediakan informasi dan layanan kesehatan sesuai kebutuhan Anda." },
     { property: "twitter:title", content: "Beranda | HealthEase" },
-    { property: "twitter:description", content: "" },
+    { property: "twitter:description", content: "Selamat datang di HealthEase, solusi digital tepercaya yang menyediakan informasi dan layanan kesehatan sesuai kebutuhan Anda." },
   ];
 };
 

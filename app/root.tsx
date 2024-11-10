@@ -30,8 +30,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=7" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:image" content="" />
-        <meta property="twitter:image" content="" />
+        <meta property="og:image" content="/favicon.ico" />
+        <meta property="twitter:image" content="/favicon.ico" />
         <Meta />
         <Links />
       </head>

@@ -19,14 +19,11 @@ export default function AlasanMemilihKami(): JSX.Element {
           berpengalaman.
         </h4>
         <div className="mt-10 flex flex-col gap-y-5">
-          {AlasanMemilihProps().map((list) => (
-            <span
-              key={list.id}
-              className="relative rounded-2xl border border-emerald-100/20 bg-emerald-100/10 p-6 text-white backdrop-blur-md transition-all duration-300 ease-in-out lg:hover:border-emerald-100/40 lg:hover:bg-emerald-100/20"
-            >
+          {AlasanMemilihProps().map(list =>
+            <span key={list.id} className="relative rounded-2xl border border-emerald-100/20 bg-emerald-100/10 p-6 text-white backdrop-blur-md transition-all duration-300 ease-in-out lg:hover:border-emerald-100/40 lg:hover:bg-emerald-100/20">
               {list.description}
             </span>
-          ))}
+          )}
         </div>
       </div>
     </section>

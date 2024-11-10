@@ -20,7 +20,7 @@ export default function Header(): JSX.Element {
     <header className="fixed left-0 right-0 top-0 z-50 bg-white py-4 shadow-md">
       <div className="mx-auto flex w-[90%] items-center justify-between">
         <Link to={`/`} className="text-2xl font-bold tracking-tight text-emerald-600">
-          HealthEase
+          <img src="/icon.png" alt="Logo Healthease" className="w-48" />
         </Link>
         <nav className="hidden items-center justify-between gap-x-14 lg:flex">
           {["Layanan", "Informasi Publik", "Tentang Kami"].map((menu, i: number) =>

@@ -23,20 +23,7 @@ export default function LayananIntro() {
   };
   return (
     <div className="min-h-screen">
-      <div className="flex flex-col lg:flex-row justify-center text-center lg:text-start lg:justify-between max-w-7xl mx-auto items-center">
-        <h1 className="text-6xl font-bold py-16">
-          Layanan Kesehatan Terlengkap untuk Kebutuhan Anda
-        </h1>
-        <p className="max-w-xl text-lg text-gray-600 italic">
-          Kami memahami bahwa setiap orang memiliki kebutuhan kesehatan yang
-          unik. Oleh karena itu, kami menyediakan berbagai layanan kesehatan
-          berbasis teknologi untuk membantu Anda mendapatkan perawatan terbaik,
-          di mana pun Anda berada. Dari konsultasi dokter hingga pemantauan
-          kesehatan secara real-time, layanan kami dirancang untuk memberikan
-          solusi yang cepat, akurat, dan nyaman. Mari jelajahi berbagai layanan
-          yang kami tawarkan dan temukan yang paling sesuai untuk Anda.
-        </p>
-      </div>
+      
       <div className="hidden lg:flex justify-center items-center max-[90vw] mx-auto">
         <div className="relative w-fit">
           <img
