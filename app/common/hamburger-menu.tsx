@@ -42,18 +42,18 @@ export default function HamburgerMenu(): JSX.Element {
         }`}
       >
         <nav className="flex flex-col gap-y-4">
-          {SidebarMenu().map((menu) => (
+          {SidebarMenu.map((menu) => (
             <Link
               to={`${getLinkPath(menu.title)}`}
               key={menu.id}
-              className={`flex font-medium transition-all duration-300 hover:scale-105 hover:text-emerald-700 ${
+              className={`flex items-center font-medium transition-all duration-300 hover:scale-105 hover:text-emerald-700 ${
                 location.pathname === getLinkPath(menu.title)
                   ? "border-b-2 border-emerald-600 text-emerald-600"
                   : "w-fit text-emerald-800 hover:border-b-2 hover:border-emerald-700"
               }`}
               onClick={() => setToggleMenu(false)}
             >
-              <i className={`${menu.icon} w-10 text-xl`} />
+              {menu.icon}&emsp;
               <h5>{menu.title}</h5>
             </Link>
           ))}

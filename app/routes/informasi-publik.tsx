@@ -1,7 +1,6 @@
-import { MetaFunction } from "@remix-run/react";
+import type { MetaFunction } from "@remix-run/node";
 import Header from "~/common/header";
 import InformasiHero from "~/components/informasi-publik/hero";
-import IndexContentSection from "~/components/informasi-publik/content";
 import Footer from "~/common/footer";
 
 export const meta: MetaFunction = () => {
@@ -14,12 +13,11 @@ export const meta: MetaFunction = () => {
     { property: "twitter:description", content: "Dapatkan informasi terkini mengenai kesehatan untuk membantu Anda menjalani hidup sehat dan sejahtera." },
   ];
 };
-export default function InformasiPage() {
+export default function InformasiPublik() {
   return (
     <>
       <Header />
       <InformasiHero />
-      <IndexContentSection />
       <Footer />
     </>
   );

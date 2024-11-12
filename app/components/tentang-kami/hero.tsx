@@ -1,4 +1,4 @@
-export default function FiturYangKamiTawarkan(): JSX.Element {
+export default function Hero(): JSX.Element {
   return (
     <section>
       <div></div>

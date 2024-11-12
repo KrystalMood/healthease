@@ -1,11 +1,11 @@
-import { MetaFunction } from "@remix-run/react";
+import type { MetaFunction } from "@remix-run/node";
 import Header from "~/common/header";
 import Hero from "~/components/layanan/hero";
 import LayananKesehatanTerlengkap from "~/components/layanan/layanan-kesehatan-terlengkap";
 // import LayananFitur from "~/components/layanan/fitur"; (2)
-// import LayananIntro from "~/components/layanan/intro"; (1)
 // import LayananOutro from "~/components/layanan/outro"; (3)
 import Footer from "~/common/footer";
+import Fitur from "~/components/layanan/fitur";
 
 export const meta: MetaFunction = () => {
   return [
@@ -17,12 +17,14 @@ export const meta: MetaFunction = () => {
     { property: "twitter:description", content: "Jelajahi layanan-layanan kesehatan kami yang dirancang untuk memberikan perawatan terbaik dan kenyamanan bagi Anda." },
   ];
 };
-export default function LayananPage() {
+
+export default function Layanan() {
   return (
     <>
       <Header />
       <Hero />
       <LayananKesehatanTerlengkap />
+      <Fitur />
       <Footer />
     </>
   );

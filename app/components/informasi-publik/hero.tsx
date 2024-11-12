@@ -69,14 +69,14 @@ export default function InformasiHero() {
       <div className="absolute inset-0 bg-black opacity-40" />
       <div className="absolute inset-0 bg-gradient-to-t from-green-900/90 via-transparent to-transparent" />
 
-      <div className="relative h-screen z-10">
-        <div className="max-w-[90vw] mx-auto px-4 sm:px-6 lg:px-0 h-full">
-          <div className="flex flex-col justify-end h-full pb-16">
+      <div className="relative z-10 h-screen">
+        <div className="mx-auto h-full max-w-[90vw] px-4 sm:px-6 lg:px-0">
+          <div className="flex h-full flex-col justify-end pb-16">
             <div className="max-w-3xl">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
+              <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
                 {informasiList[currentPage].heading}
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed mb-12 max-w-2xl">
+              <p className="mb-12 max-w-2xl text-base leading-relaxed text-gray-200 sm:text-lg md:text-xl">
                 {informasiList[currentPage].subtitle}
               </p>
 
@@ -85,15 +85,14 @@ export default function InformasiHero() {
                   <button
                     key={index}
                     onClick={() => handleBulletClick(index)}
-                    className={`group relative p-2 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full transition-all duration-300`}
+                    className={`group relative rounded-full p-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50`}
                   >
                     <div
-                      className={`h-3 w-3 rounded-full transition-all duration-300 
-                        ${
-                          currentPage === index
-                            ? "bg-white scale-100"
-                            : "bg-gray-400/70 scale-75 group-hover:scale-100"
-                        }`}
+                      className={`h-3 w-3 rounded-full transition-all duration-300 ${
+                        currentPage === index
+                          ? "scale-100 bg-white"
+                          : "scale-75 bg-gray-400/70 group-hover:scale-100"
+                      }`}
                     />
                   </button>
                 ))}

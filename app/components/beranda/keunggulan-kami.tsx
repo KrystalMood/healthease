@@ -35,7 +35,7 @@ export default function KeunggulanKami(): JSX.Element {
             </span>
           )}
         </div>
-        <Link to={`/konsultasi`} className="mt-6 flex w-fit rounded-lg bg-emerald-600 px-6 py-3 text-white shadow-lg transition-all duration-500 lg:hover:scale-105">
+        <Link to={`/reservasi`} className="mt-6 flex w-fit rounded-lg bg-emerald-600 px-6 py-3 text-white shadow-lg transition-all duration-500 lg:hover:scale-105">
           Konsultasi Sekarang
         </Link>
       </div>
