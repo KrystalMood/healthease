@@ -1,4 +1,4 @@
-export interface profiles {
+export interface DataTimPengembang {
   id: number;
   name: string;
   job: string;
