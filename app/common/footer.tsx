@@ -31,7 +31,7 @@ export default function Footer(): JSX.Element {
           </h3>
           <div className="grid grid-cols-2 gap-8">
             <ul className="flex flex-col gap-y-3" aria-label="Informasi">
-              {["Profil", "Jaminan Kesehatan", "Layanan", "Informasi Publik"].map((menu, index) => footer_menu(menu, index))}
+              {["Profil", "Layanan", "Informasi Publik"].map((menu, index) => footer_menu(menu, index))}
             </ul>
             <ul className="flex flex-col gap-y-3" aria-label="Bantuan">
               {["Tentang Kami", "FAQ", "Pusat Bantuan"].map((menu, index) => footer_menu(menu, index))}

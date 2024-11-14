@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import DataHero from "~/data/informasi-publik";
+import { DataHero } from "~/data/informasi-publik";
 
 export default function InformasiHero() {
   const [currentPage, setCurrentPage] = useState<number>(0);

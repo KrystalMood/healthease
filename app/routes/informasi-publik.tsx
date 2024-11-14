@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import Header from "~/common/header";
 import Hero from "~/components/informasi-publik/hero";
+import Filter from "~/components/informasi-publik/filter";
 import Footer from "~/common/footer";
 
 export const meta: MetaFunction = () => {
@@ -18,6 +19,7 @@ export default function InformasiPublik() {
     <>
       <Header />
       <Hero />
+      <Filter />
       <Footer />
     </>
   );

@@ -1,5 +1,3 @@
-
-
 export default function Artikel(): JSX.Element {
   return (
     <section>
