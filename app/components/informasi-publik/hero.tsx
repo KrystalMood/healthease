@@ -42,15 +42,15 @@ export default function InformasiHero() {
       />
       <span className="absolute inset-0 bg-black opacity-40" />
       <span className="absolute inset-0 bg-gradient-to-t from-green-900/90 via-transparent to-transparent" />
-      <div className="relative z-10 mx-auto h-[110vh] max-w-[90vw] px-4 sm:px-6 lg:px-0">
-        <div className="flex h-full max-w-3xl flex-col justify-end pb-16">
-          <h1 className="mb-6 cursor-default text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
+      <div className="relative z-10 mx-auto h-[110vh] max-w-[90vw]">
+        <figure className="flex h-full max-w-3xl flex-col justify-end pb-16">
+          <h2 className="mb-3 cursor-default text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
             {DataHero()[currentPage].title}
-          </h1>
-          <p className="mb-12 max-w-2xl cursor-default text-base leading-relaxed text-gray-200 sm:text-lg md:text-xl">
+          </h2>
+          <figcaption className="mb-12 max-w-2xl cursor-default text-base leading-relaxed text-gray-200 sm:text-lg md:text-xl">
             {DataHero()[currentPage].description}
-          </p>
-          <figure className="flex space-x-2">
+          </figcaption>
+          <div className="flex space-x-2">
             {DataHero().map((_, index) => (
               <button
                 key={index}
@@ -60,8 +60,8 @@ export default function InformasiHero() {
                 <div className={`h-3 w-3 rounded-full transition-all duration-300 ${currentPage === index ? "scale-100 bg-white" : "scale-75 bg-gray-400/70 group-hover:scale-100"}`} />
               </button>
             ))}
-          </figure>
-        </div>
+          </div>
+        </figure>
       </div>
     </section>
   );

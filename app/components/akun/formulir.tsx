@@ -7,12 +7,15 @@ export default function Formulir(): JSX.Element {
   const [_showPassword, _setShowPassword] = useState<boolean>(false);
 
   return (
-    <section className="flex h-[140vh] w-full flex-col items-center justify-center lg:h-[120vh]">
+    <section className="flex h-[150vh] w-full flex-col items-center justify-center lg:h-[125vh]">
+      <Link to={`/`}>
+        <img src="/icon.png" alt="" className="mb-4 w-44" />
+      </Link>
       <h3 className="cursor-default text-2xl font-bold lg:text-3xl">
         Selamat Datang!
       </h3>
-      <h5 className="mt-2 cursor-default text-lg">
-        Lorem ipsum dolor sit amet consectetur.
+      <h5 className="mx-auto mt-2 w-3/4 cursor-default text-center text-lg">
+        Saatnya Anda mencapai kesehatan yang lebih baik.
       </h5>
       <Form onSubmit={() => {}} className="mt-8 flex w-full flex-col gap-4">
         <div className="relative mx-auto w-3/4">

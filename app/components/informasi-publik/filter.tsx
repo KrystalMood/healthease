@@ -23,8 +23,8 @@ export default function Filter(): JSX.Element {
             <button
               onClick={() => setCurrentFilter(list.filter)}
               key={list.id}
-              className={`rounded-md border-2 border-slate-800 px-5 py-2 text-sm font-semibold text-slate-600 transition-all duration-500 ease-in-out lg:hover:bg-slate-800 lg:hover:text-slate-100 ${
-                currentFilter === list.filter ? "bg-slate-800 text-slate-100" : ""
+              className={`rounded-md border-2 border-slate-800 px-5 py-2 text-sm font-semibold text-slate-50 transition-all duration-500 ease-in-out lg:hover:bg-slate-800 lg:hover:text-slate-100 ${
+                currentFilter === list.filter ? "bg-slate-800 text-slate-100" : "text-slate-600"
               }`}
             >
               {list.filter}
