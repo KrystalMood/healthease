@@ -1,18 +1,18 @@
 export default function BertemuSangPendiri() {
   return (
-    <section className="mx-auto my-16 flex w-[90%] cursor-default flex-col gap-x-24 lg:my-32 lg:flex-row">
+    <section className="mx-auto my-16 flex w-[90%] cursor-default flex-col gap-x-24 lg:flex-row">
       <div className="flex flex-col items-start justify-center lg:w-3/5">
         <h2 className="text-4xl font-bold italic text-emerald-600 lg:text-5xl">
           Bertemu Sang Pendiri
         </h2>
         <figure className="mt-12 flex">
           <span className="mr-6 hidden h-full w-1.5 bg-emerald-500 lg:inline" />
-          <figcaption className="text-justify text-xl leading-relaxed text-gray-700 first-letter:float-left first-letter:mr-3 first-letter:text-5xl first-letter:font-bold first-letter:text-emerald-600">
-            ❝Inovasi di bidang kesehatan bukan hanya soal teknologi, tetapi soal
+          <figcaption className="text-justify text-xl leading-relaxed text-gray-700">
+            Inovasi di bidang kesehatan bukan hanya soal teknologi, tetapi soal
             kemanusiaan. HealthEase berdiri untuk melayani, karena kesehatan
             adalah inti dari kehidupan yang bermakna. Setiap orang, tanpa
             memandang latar belakang atau kondisi ekonomi, berhak mendapatkan
-            akses kesehatan yang layak.❞
+            akses kesehatan yang layak.
           </figcaption>
         </figure>
         <h4 className="mt-8 text-2xl font-semibold italic text-emerald-700">

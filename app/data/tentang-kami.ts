@@ -9,12 +9,6 @@ export const TimPengembang: DataTimPengembang[] = [
   },
   {
     id: 2,
-    name: "Farrel Muhammad Kafie",
-    job: "UI/UX Designer",
-    image: "/farrel-muhammad-kafie.jpg",
-  },
-  {
-    id: 3,
     name: "Pramudya Surya Anggara Putra",
     job: "Full Stack Developer",
     image: "/pramudya-surya-anggara-putra.jpg",

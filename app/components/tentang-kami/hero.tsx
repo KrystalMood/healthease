@@ -9,15 +9,13 @@ export default function Hero(): JSX.Element {
           <br />
           Bersama Anda
         </h2>
-
-        <p className="ml-16 mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
+        <h5 className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
           Kami percaya bahwa setiap langkah menuju kesehatan yang lebih baik
           dimulai dengan kepercayaan dan komitmen. Mari mengenal lebih dekat
           visi dan misi kami dalam memberikan layanan kesehatan terbaik untuk
           Anda.
-        </p>
+        </h5>
       </div>
-
       <div className="relative mt-16">
         <span className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40" />
         <img

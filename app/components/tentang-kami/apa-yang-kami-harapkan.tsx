@@ -3,9 +3,9 @@ export default function ApaYangKamiHarapkan(): JSX.Element {
     <section className="mx-auto w-full cursor-default bg-gradient-to-tr from-white to-green-50 px-[5%] py-16 lg:py-20">
       <h2 className="text-4xl font-bold leading-tight tracking-wide text-gray-800 lg:text-5xl">
         <span className="bg-gradient-to-r from-emerald-600 to-green-400 bg-clip-text text-transparent">
-          Apa yang Kami Harapkan
+          Apa yang Kami Harapkan&nbsp;
         </span>
-        <br />
+        <br className="hidden lg:inline" />
         di 10 Tahun Ke Depan
       </h2>
       <div className="mt-10 flex flex-col gap-x-16 lg:flex-row">

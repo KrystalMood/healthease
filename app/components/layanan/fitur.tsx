@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import { ChevronRight } from "lucide-react";
 import { useState } from "react";
 
@@ -5,37 +7,33 @@ export default function Fitur(): JSX.Element {
   const daftar_layanan = [
     {
       judul: "Fitur AI Canggih",
-      deskripsi:
-        "Teknologi kecerdasan buatan terkini untuk diagnosis yang lebih akurat",
-      gambar: "/fitur-unggulan/fitur-ai-canggih.jpg",
+      deskripsi: "Teknologi kecerdasan buatan terkini untuk diagnosis yang lebih akurat",
+      gambar: "/fitur-ai-canggih.jpg",
     },
     {
       judul: "Penjadwalan Otomatis Pintar",
-      deskripsi:
-        "Atur jadwal konsultasi dengan mudah menggunakan sistem otomatis",
-      gambar: "/fitur-unggulan/penjadwalan-otomatis-pintar.jpg",
+      deskripsi: "Atur jadwal konsultasi dengan mudah menggunakan sistem otomatis",
+      gambar: "/penjadwalan-otomatis-pintar.jpg",
     },
     {
       judul: "Manajemen Data Pasien Terpadu",
-      deskripsi:
-        "Kelola riwayat medis dan data kesehatan Anda dalam satu platform",
-      gambar: "/fitur-unggulan/manajemen-data-pasien-terpadu.jpg",
+      deskripsi: "Kelola riwayat medis dan data kesehatan Anda dalam satu platform",
+      gambar: "/manajemen-data-pasien-terpadu.jpg",
     },
     {
       judul: "Portal Kesehatan Interaktif",
-      deskripsi:
-        "Akses informasi kesehatan dan edukasi medis secara interaktif",
-      gambar: "/fitur-unggulan/portal-kesehatan-interaktif.jpg",
+      deskripsi: "Akses informasi kesehatan dan edukasi medis secara interaktif",
+      gambar: "/portal-kesehatan-interaktif.jpg",
     },
     {
       judul: "Telemedicine Berkualitas Tinggi",
       deskripsi: "Konsultasi dokter jarak jauh dengan kualitas layanan terbaik",
-      gambar: "/fitur-unggulan/telemedicine-berkualitas-tinggi.jpg",
+      gambar: "/telemedicine-berkualitas-tinggi.jpg",
     },
     {
       judul: "Pengingat Obat Cerdas",
       deskripsi: "Sistem pengingat otomatis untuk jadwal konsumsi obat Anda",
-      gambar: "/fitur-unggulan/pengingat-obat-cerdas.jpg",
+      gambar: "/pengingat-obat-cerdas.jpg",
     },
   ];
 
@@ -46,11 +44,7 @@ export default function Fitur(): JSX.Element {
       <div className="relative hidden lg:flex">
         <span className="absolute inset-0 -z-10 rotate-3 rounded-xl bg-gradient-to-r from-green-400 to-emerald-500" />
         <img
-          src={
-            activeIndex == null
-              ? "/fitur.webp"
-              : daftar_layanan[activeIndex].gambar
-          }
+          src={activeIndex == null ? "/fitur.webp" : daftar_layanan[activeIndex].gambar}
           alt="Fitur Unggulan HealthEase"
           className="h-full max-w-80 rounded-xl object-cover shadow-lg transition-all duration-300 hover:-rotate-3 hover:scale-105"
         />
@@ -69,14 +63,9 @@ export default function Fitur(): JSX.Element {
         </h5>
         <ul className="mt-8 flex flex-col gap-4">
           {daftar_layanan.map((list, index: number) => (
-            <li
-              key={index}
-              className="overflow-hidden rounded-lg border border-emerald-100 shadow-sm"
-            >
+            <li key={index} className="overflow-hidden rounded-lg border border-emerald-100 shadow-sm">
               <div
-                onClick={() =>
-                  setActiveIndex(activeIndex === index ? null : index)
-                }
+                onClick={() => setActiveIndex(activeIndex === index ? null : index)}
                 className="flex cursor-pointer items-center justify-between bg-white p-4 transition-all duration-300 hover:bg-emerald-50"
               >
                 <div className="flex items-center">
@@ -91,13 +80,7 @@ export default function Fitur(): JSX.Element {
                   }`}
                 />
               </div>
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  activeIndex === index
-                    ? "max-h-40 opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
+              <div className={`overflow-hidden transition-all duration-300 ${activeIndex === index ? "max-h-40 opacity-100" : "max-h-0 opacity-0"}`}>
                 <p className="bg-emerald-50 p-4 text-gray-600">
                   {list.deskripsi}
                 </p>
