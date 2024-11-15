@@ -7,51 +7,69 @@ import { DataFilter } from "~/data/informasi-publik";
 export default function Filter(): JSX.Element {
   const [currentFilter, setCurrentFilter] = useState<string>("Semua");
   const [sortBy, setSortBy] = useState<string>("Terbaru");
-  const [sortOptions] = useState<string[]>(["Terbaru", "Terlama", "Paling Banyak Dilihat", "Paling Disukai"]);
+  const [sortOptions] = useState<string[]>([
+    "Terbaru",
+    "Terlama",
+    "Paling Banyak Dilihat",
+    "Paling Disukai",
+  ]);
   const [showSorting, setShowSorting] = useState<boolean>(false);
 
   return (
     <section className="mx-auto mt-14 w-[90%]">
-      <h3 className="cursor-default text-3xl font-bold">Informasi Publik</h3>
-      <h5 className="mt-2 cursor-default text-lg text-slate-600">
+      <h2 className="mb-3 cursor-default text-4xl font-bold text-slate-800">
+        Informasi Publik
+      </h2>
+      <p className="mb-8 cursor-default text-lg text-slate-600">
         Jelajahi kategori pilihan kami dan temukan cerita, kiat, dan ide yang
         sesuai dengan Anda.
-      </h5>
-      <nav className="mt-4 flex flex-col justify-between lg:flex-row lg:items-center">
-        <div className="flex gap-3 overflow-x-scroll">
-          {DataFilter().map(list =>
+      </p>
+      <nav className="flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
+        <div className="flex gap-3 overflow-x-auto pb-2 lg:pb-0">
+          {DataFilter().map((list) => (
             <button
               onClick={() => setCurrentFilter(list.filter)}
               key={list.id}
-              className={`rounded-md border-2 border-slate-800 px-5 py-2 text-sm font-semibold text-slate-50 transition-all duration-500 ease-in-out lg:hover:bg-slate-800 lg:hover:text-slate-100 ${
-                currentFilter === list.filter ? "bg-slate-800 text-slate-100" : "text-slate-600"
+              className={`rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 ease-in-out ${
+                currentFilter === list.filter
+                  ? "bg-slate-800 text-white shadow-md"
+                  : "border-2 border-slate-300 bg-white text-slate-600 hover:border-slate-800 hover:bg-slate-100"
               }`}
             >
               {list.filter}
             </button>
-          )}
+          ))}
         </div>
-        <div className="relative mt-4 flex items-center justify-end lg:mt-0 lg:justify-start">
-          <h4 className="mr-4 cursor-default">Sort by:</h4>
+        <div className="relative flex items-center justify-end lg:justify-start">
+          <span className="mr-4 cursor-default font-medium text-slate-600">
+            Urutkan:
+          </span>
           <button
-            onClick={() => setShowSorting(prev => !prev)}
+            onClick={() => setShowSorting((prev) => !prev)}
             aria-expanded={showSorting}
-            className="flex cursor-pointer items-center rounded-md border-2 border-slate-800 py-2 pl-5 pr-3 text-slate-600"
+            className="flex items-center rounded-md border-2 border-slate-300 bg-white px-4 py-2.5 text-slate-600 transition-all duration-300 ease-in-out hover:border-slate-800"
           >
             {sortBy}
-            {showSorting ? <BiChevronUp className="ml-1 text-xl" /> : <BiChevronDown className="ml-1 text-xl" />}
+            {showSorting ? (
+              <BiChevronUp className="ml-2 text-xl" />
+            ) : (
+              <BiChevronDown className="ml-2 text-xl" />
+            )}
           </button>
           {showSorting && (
-            <div className="absolute right-0 top-12 z-10 w-48 rounded-md border border-slate-800 bg-white shadow-lg lg:left-0 lg:top-10">
-              {sortOptions.map(option =>
+            <div className="absolute right-0 top-12 z-10 w-56 rounded-md border border-slate-200 bg-white shadow-xl lg:left-0 lg:top-11">
+              {sortOptions.map((option) => (
                 <button
                   key={option}
-                  onClick={() => { setSortBy(option), setShowSorting(false) }}
-                  className="w-full px-5 py-3 text-left text-sm text-slate-600 hover:bg-slate-800 hover:text-slate-100"
+                  onClick={() => {
+                    setSortBy(option);
+                    setShowSorting(false);
+                  }}
+                  className="w-full px-5 py-3 text-left text-sm text-slate-600 transition-colors duration-200 hover:bg-slate-100"
                 >
                   {option}
                 </button>
-              )}
+              ))}
             </div>
           )}
         </div>

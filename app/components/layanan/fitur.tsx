@@ -1,40 +1,107 @@
 import { ChevronRight } from "lucide-react";
+import { useState } from "react";
 
 export default function Fitur(): JSX.Element {
-  const daftar_layanan = ["Fitur AI", "Penjadwalan Otomatis", "Manajemen Data Pasien", "Portal Kesehatan", "Telemedicine", "Pengingat Obat"];
+  const daftar_layanan = [
+    {
+      judul: "Fitur AI Canggih",
+      deskripsi:
+        "Teknologi kecerdasan buatan terkini untuk diagnosis yang lebih akurat",
+      gambar: "/fitur-unggulan/fitur-ai-canggih.jpg",
+    },
+    {
+      judul: "Penjadwalan Otomatis Pintar",
+      deskripsi:
+        "Atur jadwal konsultasi dengan mudah menggunakan sistem otomatis",
+      gambar: "/fitur-unggulan/penjadwalan-otomatis-pintar.jpg",
+    },
+    {
+      judul: "Manajemen Data Pasien Terpadu",
+      deskripsi:
+        "Kelola riwayat medis dan data kesehatan Anda dalam satu platform",
+      gambar: "/fitur-unggulan/manajemen-data-pasien-terpadu.jpg",
+    },
+    {
+      judul: "Portal Kesehatan Interaktif",
+      deskripsi:
+        "Akses informasi kesehatan dan edukasi medis secara interaktif",
+      gambar: "/fitur-unggulan/portal-kesehatan-interaktif.jpg",
+    },
+    {
+      judul: "Telemedicine Berkualitas Tinggi",
+      deskripsi: "Konsultasi dokter jarak jauh dengan kualitas layanan terbaik",
+      gambar: "/fitur-unggulan/telemedicine-berkualitas-tinggi.jpg",
+    },
+    {
+      judul: "Pengingat Obat Cerdas",
+      deskripsi: "Sistem pengingat otomatis untuk jadwal konsumsi obat Anda",
+      gambar: "/fitur-unggulan/pengingat-obat-cerdas.jpg",
+    },
+  ];
+
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
     <section className="mx-auto mb-20 flex w-[90%] gap-x-12">
       <div className="relative hidden lg:flex">
-        <span className="absolute inset-0 -z-10 rotate-3 rounded-xl bg-green-400" />
+        <span className="absolute inset-0 -z-10 rotate-3 rounded-xl bg-gradient-to-r from-green-400 to-emerald-500" />
         <img
-          src="/fitur.webp"
-          alt="Fitur yang Kami Tawarkan."
-          className="rounded-xl object-cover shadow-md transition-all duration-300 hover:-rotate-3"
+          src={
+            activeIndex == null
+              ? "/fitur.webp"
+              : daftar_layanan[activeIndex].gambar
+          }
+          alt="Fitur Unggulan HealthEase"
+          className="h-full max-w-80 rounded-xl object-cover shadow-lg transition-all duration-300 hover:-rotate-3 hover:scale-105"
         />
       </div>
-      <div className="relative flex w-fit flex-col rounded-lg border-2 border-gray-100 px-12 py-8 shadow-lg">
-        <h2 className="cursor-default text-3xl font-bold lg:text-5xl">
-          Fitur yang Kami Tawarkan
+      <div className="relative flex w-fit flex-col rounded-lg border-2 border-emerald-100 bg-white px-12 py-8 shadow-xl">
+        <h2 className="cursor-default text-3xl font-bold text-emerald-800 lg:text-5xl">
+          Fitur Unggulan Kami
         </h2>
-        <h5 className="mt-4 cursor-default">
+        <h5 className="mt-4 cursor-default text-gray-600">
           Temukan keunggulan&nbsp;
-          <span className="text-emerald-600">HealthEase</span>, dengan
-          fitur-fitur modern yang siap mendukung kebutuhan kesehatan Anda. Dari
-          teknologi AI hingga kemudahan akses layanan kesehatan, kami hadir
-          untuk memberikan pengalaman terbaik dalam merawat kesehatan Anda. Mari
-          jelajahi dan nikmati kemudahan yang kami tawarkan.
+          <span className="font-semibold text-emerald-600">HealthEase</span>,
+          dengan fitur-fitur modern yang siap mendukung kebutuhan kesehatan
+          Anda. Dari teknologi AI hingga kemudahan akses layanan kesehatan, kami
+          hadir untuk memberikan pengalaman terbaik dalam merawat kesehatan
+          Anda. Mari jelajahi dan nikmati kemudahan yang kami tawarkan.
         </h5>
         <ul className="mt-8 flex flex-col gap-4">
           {daftar_layanan.map((list, index: number) => (
-            <li key={index} className="flex cursor-pointer items-center justify-between border-b-2 border-emerald-50 pb-3 transition-all duration-300 ease-in-out hover:translate-x-2">
-              <div className="flex items-center justify-center font-semibold">
-                <span className="mr-4 flex rounded-full bg-green-200 px-3 py-2">
-                  {index + 1}.
-                </span>
-                <h4 className="text-xl">{list}</h4>
+            <li
+              key={index}
+              className="overflow-hidden rounded-lg border border-emerald-100 shadow-sm"
+            >
+              <div
+                onClick={() =>
+                  setActiveIndex(activeIndex === index ? null : index)
+                }
+                className="flex cursor-pointer items-center justify-between bg-white p-4 transition-all duration-300 hover:bg-emerald-50"
+              >
+                <div className="flex items-center">
+                  <span className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-green-200 to-emerald-300 text-emerald-800">
+                    {index + 1}
+                  </span>
+                  <h4 className="text-xl font-semibold">{list.judul}</h4>
+                </div>
+                <ChevronRight
+                  className={`transform transition-transform duration-300 ${
+                    activeIndex === index ? "rotate-90" : ""
+                  }`}
+                />
               </div>
-              <ChevronRight />
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  activeIndex === index
+                    ? "max-h-40 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <p className="bg-emerald-50 p-4 text-gray-600">
+                  {list.deskripsi}
+                </p>
+              </div>
             </li>
           ))}
         </ul>

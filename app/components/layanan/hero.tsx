@@ -1,35 +1,81 @@
-import { Info } from "lucide-react";
+import { Heart, Info, Stethoscope, Thermometer } from "lucide-react";
 
 export default function Hero(): JSX.Element {
   return (
-    <section className="mx-auto flex items-center justify-between gap-x-12 bg-gradient-to-br from-slate-50 to-gray-50 px-[5%] py-28 lg:pt-40">
+    <section className="mx-auto flex min-h-[90vh] w-[90%] items-center justify-between gap-x-24 bg-gradient-to-br from-slate-50 to-gray-50 py-20 lg:py-28">
       <div className="flex flex-col text-center lg:text-left">
-        <address className="mx-auto flex w-fit items-center rounded-xl bg-emerald-50 px-4 py-4 shadow-sm lg:mx-0">
-          <span className="mr-2 hidden h-2 w-2 rounded-full bg-emerald-600 lg:inline" />
-          <h4 className="cursor-default text-lg font-medium text-emerald-700">
+        <address className="mx-auto flex w-fit items-center gap-x-2 rounded-xl bg-emerald-50/80 px-5 py-3 shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-emerald-50 lg:mx-0">
+          <span className="mr-2 hidden h-2.5 w-2.5 animate-pulse rounded-full bg-emerald-600 lg:inline" />
+          <h4 className="cursor-default text-base font-semibold tracking-wide text-emerald-700">
             Informasi Mengenai Pelayanan yang Kami Sediakan
           </h4>
         </address>
-        <h1 className="mt-10 cursor-default text-4xl font-bold leading-tight text-gray-900 lg:text-5xl">
-          Solusi Kesehatan Terbaik, Tepat&nbsp;
-          <span className="text-emerald-600">di Ujung Jari Anda</span>
+
+        <h1 className="mt-12 cursor-default text-4xl font-bold leading-tight tracking-tight text-gray-900 lg:text-6xl">
+          Solusi Kesehatan Terbaik,
+          <br className="hidden lg:inline" />
+          <span className="bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">
+            Tepat di Ujung Jari Anda
+          </span>
         </h1>
-        <h5 className="mt-4 max-w-xl cursor-default text-lg font-medium text-gray-600">
+
+        <h5 className="mt-6 max-w-2xl cursor-default text-lg font-medium leading-relaxed text-gray-600">
           Selamat datang di era perawatan kesehatan berbasis{" "}
           <span className="italic">Artificial Intelligence</span>. Kami
           menawarkan solusi cepat, akurat, dan personal dari diagnosis hingga
           pengobatan. Dengan teknologi canggih, konsultasi dan layanan kesehatan
-          kini lebih mudah diakses.
+          kini lebih mudah diakses kapan saja dan di mana saja.
         </h5>
-        <hr className="mt-6 max-w-xl border-t-2 border-gray-200" />
-        <button className="mx-auto mt-6 flex w-fit items-center justify-between rounded-lg border-2 border-emerald-600 bg-gradient-to-br from-slate-50 to-gray-50 px-6 py-2 text-lg font-medium text-gray-600 shadow-md transition-all duration-300 lg:mx-0 lg:hover:scale-105 lg:hover:bg-emerald-500 lg:hover:text-black">
+
+        <hr className="mx-auto mt-8 w-full max-w-xl border-t-2 border-gray-200/70 lg:mx-0" />
+
+        <div className="mt-8 flex flex-col gap-y-4">
+          <div className="flex items-center justify-center gap-x-12 lg:justify-start">
+            <div className="flex flex-col items-center">
+              <Stethoscope className="h-6 w-6 text-emerald-500 transition-all duration-300 hover:scale-110 hover:text-emerald-600" />
+              <span className="mt-2 text-sm font-medium text-gray-600">
+                50+ Dokter
+              </span>
+            </div>
+            <div className="flex flex-col items-center">
+              <Heart className="h-6 w-6 text-emerald-500 transition-all duration-300 hover:scale-110 hover:text-emerald-600" />
+              <span className="mt-2 text-sm font-medium text-gray-600">
+                98% Puas
+              </span>
+            </div>
+            <div className="flex flex-col items-center">
+              <Thermometer className="h-6 w-6 text-emerald-500 transition-all duration-300 hover:scale-110 hover:text-emerald-600" />
+              <span className="mt-2 text-sm font-medium text-gray-600">
+                24/7 Layanan
+              </span>
+            </div>
+          </div>
+          <div className="flex items-center justify-center gap-x-8 text-sm text-gray-500 lg:justify-start">
+            <span className="flex items-center">
+              <span className="mr-2 text-yellow-400">★★★★★</span>
+              4.9/5 (2.5k+ review)
+            </span>
+            <span>|</span>
+            <span>50k+ Pasien Terlayani</span>
+          </div>
+        </div>
+
+        <button className="group mx-auto mt-8 flex w-fit items-center justify-between rounded-lg border-2 border-emerald-600 bg-gradient-to-br from-slate-50 to-gray-50 px-7 py-3 text-lg font-semibold text-gray-700 shadow-md transition-all duration-300 hover:scale-105 lg:mx-0">
           Pelajari Lebih Lanjut
-          <Info className="ml-4 text-gray-600 opacity-90" size={18} />
+          <Info
+            className="ml-4 text-gray-700 transition-all group-hover:rotate-12"
+            size={20}
+          />
         </button>
       </div>
-      <div className="relative hidden lg:block">
-        <span className="absolute -bottom-8 right-1/2 h-[60%] w-[120%] translate-x-1/2 rotate-3 rounded-lg bg-emerald-400 shadow-lg" />
-        <img src="/hero-2.jpg" alt="Layanan Healthease" className="relative z-10 w-[50em] rounded-lg shadow-md transition-all duration-300 lg:hover:-rotate-3" />
+
+      <div className="relative hidden max-w-xl lg:block">
+        <span className="absolute -bottom-10 right-1/2 h-[65%] w-[115%] translate-x-1/2 rotate-3 rounded-lg bg-gradient-to-br from-emerald-400/90 to-teal-400/90 shadow-lg backdrop-blur-sm" />
+        <img
+          src="/hero-2.jpg"
+          alt="Layanan Healthease"
+          className="relative z-10 w-full max-w-[52rem] rounded-lg shadow-xl transition-all duration-500 hover:-rotate-3 hover:scale-105"
+        />
       </div>
     </section>
   );
