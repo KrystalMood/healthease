@@ -57,17 +57,13 @@ export default function Hero(): JSX.Element {
         </div>
       </div>
 
-      <div className="relative">
-        <span 
-          className="absolute inset-0 z-20 h-full w-full rounded-2xl bg-gradient-to-t from-emerald-500 to-transparent opacity-50" 
-        />
-        <span 
-          className="absolute left-3 top-3 h-full w-full rounded-2xl bg-gradient-to-br from-emerald-500 to-green-500 opacity-50"
-        />
+      <div className="relative transition-transform duration-300 hover:rotate-1 hover:scale-[1.02]">
+        <span className="absolute inset-0 z-20 h-full w-full rounded-2xl bg-gradient-to-t from-emerald-500 to-transparent opacity-50 transition-opacity duration-300 hover:opacity-40" />
+        <span className="absolute left-3 top-3 h-full w-full rounded-2xl bg-gradient-to-br from-emerald-500 to-green-500 opacity-50 transition-opacity duration-300 hover:opacity-40" />
         <img
           src="/hero.jpg"
           alt="Welcome to HealthEase!"
-          className="relative z-10 hidden h-auto max-w-xl rounded-2xl object-cover shadow-[1rem_1rem_3rem_rgba(0,0,0,0.1)] lg:block"
+          className="relative z-10 hidden h-auto max-w-xl rounded-2xl object-cover shadow-[1rem_1rem_3rem_rgba(0,0,0,0.1)] transition-all duration-300 hover:shadow-[1.2rem_1.2rem_3.5rem_rgba(0,0,0,0.15)] lg:block"
         />
       </div>
     </section>

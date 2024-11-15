@@ -2,7 +2,7 @@ import { Heart, Info, Stethoscope, Thermometer } from "lucide-react";
 
 export default function Hero(): JSX.Element {
   return (
-    <section className="mx-auto flex min-h-[90vh] w-[90%] items-center justify-between gap-x-24 bg-gradient-to-br from-slate-50 to-gray-50 py-20 lg:py-28">
+    <section className="mx-auto flex min-h-[90vh] w-[90%] items-center justify-between gap-x-24 bg-white lg:py-28">
       <div className="flex flex-col text-center lg:text-left">
         <address className="mx-auto flex w-fit items-center gap-x-2 rounded-xl bg-emerald-50/80 px-5 py-3 shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-emerald-50 lg:mx-0">
           <span className="mr-2 hidden h-2.5 w-2.5 animate-pulse rounded-full bg-emerald-600 lg:inline" />

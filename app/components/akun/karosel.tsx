@@ -33,7 +33,7 @@ export default function Karosel(): JSX.Element {
   }, []);
 
   return (
-    <section className="relative hidden w-full overflow-hidden rounded-r-3xl lg:inline">
+    <section className="relative hidden w-full overflow-hidden lg:inline">
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-green-900/90 via-transparent to-transparent" />
       <img
         ref={image}
