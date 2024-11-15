@@ -23,7 +23,7 @@ export const links: LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="mx-auto max-w-[1440px]">
       <head>
         <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         <meta charSet="utf-8" />

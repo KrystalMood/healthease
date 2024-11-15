@@ -1,67 +1,36 @@
-import { Cpu, Calendar, Server, Globe, Video, Bell } from "lucide-react";
 import { DataFiturProps } from "~/types/layanan";
 
 export default function DataFitur(): DataFiturProps[] {
   return [
     {
-      name: "Asisten AI",
-      description: "Sistem ini dirancang untuk menerima masukan dari pengguna terkait gejala yang mereka alami, di mana setiap gejala akan diolah oleh basis pengetahuan medis yang telah diintegrasikan dalam sistem.",
-      advantages: [
-        "Mengurangi waktu diagnostik",
-        "Peningkatan akurasi dalam penilaian awal",
-        "Dukungan untuk kasus-kasus kompleks",
-      ],
-      icon: <Cpu size={24} />,
+      title: "Fitur AI Canggih",
+      description: "Teknologi kecerdasan buatan terkini untuk diagnosis yang lebih akurat",
+      image: "/fitur-ai-canggih.jpg",
     },
     {
-      name: "Penjadwalan Otomatis",
-      description: "Sistem ini dirancang untuk menerima masukan dari pengguna terkait gejala yang mereka alami, di mana setiap gejala akan diolah oleh basis pengetahuan medis yang telah diintegrasikan dalam sistem.",
-      advantages: [
-        "Mengurangi waktu diagnostik",
-        "Peningkatan akurasi dalam penilaian awal",
-        "Dukungan untuk kasus-kasus kompleks",
-      ],
-      icon: <Calendar size={24} />,
+      title: "Penjadwalan Otomatis Pintar",
+      description: "Atur jadwal konsultasi dengan mudah menggunakan sistem otomatis",
+      image: "/penjadwalan-otomatis-pintar.jpg",
     },
     {
-      name: "Manajemen Data Pasien",
-      description: "Sistem ini menyediakan fitur yang dapat menginput, menyimpan, dan mengambil data pasien secara aman. Data yang disimpan meliputi rekam medis elektronik (EMR) yang disusun secara terstruktur, sehingga mudah diakses dan dianalisis oleh tenaga medis yang berwenang.",
-      advantages: [
-        "Informasi kesehatan terpusat",
-        "Keamanan data yang ditingkatkan",
-        "Akses cepat ke riwayat pasien",
-      ],
-      icon: <Server size={24} />,
+      title: "Manajemen Data Pasien Terpadu",
+      description: "Kelola riwayat medis dan data kesehatan Anda dalam satu platform",
+      image: "/manajemen-data-pasien-terpadu.jpg",
     },
     {
-      name: "Portal Informasi",
-      description: "Sistem ini bertindak sebagai sumber informasi kesehatan yang dapat diakses oleh pengguna secara luas, baik melalui artikel, video, maupun infografis yang disajikan dengan cara yang mudah dipahami.",
-      advantages: [
-        "Akses 24/7 terhadap sumber daya kesehatan",
-        "Peningkatan pendidikan pasien",
-        "Pengambilan keputusan yang lebih baik",
-      ],
-      icon: <Globe size={24} />,
+      title: "Portal Kesehatan Interaktif",
+      description: "Akses informasi kesehatan dan edukasi medis secara interaktif",
+      image: "/portal-kesehatan-interaktif.jpg",
     },
     {
-      name: "Telemedicine",
-      description: "Sistem ini memungkinkan pasien untuk melakukan konsultasi dengan tenaga medis secara daring melalui berbagai platform, seperti video, audio, maupun chat. Dengan mengatur antrian konsultasi secara otomatis, pasien tidak perlu khawatir mengenai waktu tunggu yang berlebihan.",
-      advantages: [
-        "Peningkatan aksesibilitas layanan kesehatan",
-        "Mengurangi kebutuhan perjalanan",
-        "Pilihan konsultasi yang fleksibel",
-      ],
-      icon: <Video size={24} />,
+      title: "Telemedicine Berkualitas Tinggi",
+      description: "Konsultasi dokter jarak jauh dengan kualitas layanan terbaik",
+      image: "/telemedicine-berkualitas-tinggi.jpg",
     },
     {
-      name: "Pengingat Pengobatan",
-      description: "Sistem ini dirancang untuk membantu pasien dalam mengelola pengobatan mereka dengan lebih baik melalui fitur pengingat pengobatan. Jadwal dan dosis obat dapat dimasukkan oleh pengguna atau tenaga medis, dan sistem akan mengirimkan notifikasi sesuai dengan waktu yang telah ditentukan.",
-      advantages: [
-        "Peningkatan kepatuhan pengobatan",
-        "Mengurangi kesalahan pengobatan",
-        "Hasil pengobatan yang lebih baik",
-      ],
-      icon: <Bell size={24} />,
+      title: "Pengingat Obat Cerdas",
+      description: "Sistem pengingat otomatis untuk jadwal konsumsi obat Anda",
+      image: "/pengingat-obat-cerdas.jpg",
     },
   ];
 }

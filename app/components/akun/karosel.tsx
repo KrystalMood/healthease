@@ -23,7 +23,7 @@ export default function Karosel(): JSX.Element {
         opacity: 0,
         duration: 0.5,
         onComplete: () => {
-          setCurrentStep(prevStep => (prevStep + 1) % StepByStep().length);
+          setCurrentStep((prevStep) => (prevStep + 1) % StepByStep().length);
           gsap.to(image.current, { opacity: 1, duration: 0.5 });
         },
       });

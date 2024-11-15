@@ -1,5 +1,6 @@
 import { MetaFunction } from "@remix-run/node";
 import Header from "~/common/header";
+import Hero from "~/components/faq/hero";
 import Footer from "~/common/footer";
 
 export const meta: MetaFunction = () => {
@@ -17,6 +18,7 @@ export default function FAQ() {
   return (
     <>
       <Header />
+      <Hero />
       <Footer />
     </>
   );

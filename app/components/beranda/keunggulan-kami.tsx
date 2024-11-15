@@ -14,16 +14,16 @@ export default function KeunggulanKami(): JSX.Element {
   ];
 
   return (
-    <section className="mx-auto mt-24 flex w-[90%] cursor-default items-center gap-x-14 py-16">
+    <section className="mx-auto mt-10 flex w-[90%] cursor-default items-center gap-x-14 py-16">
       <div className="flex flex-col">
         <h6 className="animate-pulse text-lg font-semibold tracking-wide text-emerald-600">
           Keunggulan Kami
         </h6>
         <h1 className="mt-4 text-4xl font-bold leading-tight text-gray-900 lg:text-5xl">
-          Memberikan{" "}
+          Memberikan&nbsp;
           <span className="animate-gradient bg-gradient-to-r from-emerald-600 to-green-500 bg-clip-text text-transparent">
             Layanan Kesehatan Berkualitas
-          </span>{" "}
+          </span>&nbsp;
           dengan Standar Internasional
         </h1>
         <h5 className="mt-4 text-lg leading-relaxed text-gray-600">
@@ -33,23 +33,16 @@ export default function KeunggulanKami(): JSX.Element {
         </h5>
         <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {keunggulanKami.map((keunggulan, i: number) => (
-            <span
-              key={i}
-              className="flex items-center space-x-2 rounded-lg bg-white p-2 font-medium text-gray-700 transition-all duration-300 hover:scale-[1.05] hover:bg-emerald-50 hover:text-emerald-600 hover:shadow-lg"
-            >
+            <span key={i} className="flex items-center space-x-2 rounded-lg bg-white p-2 font-medium text-gray-700 transition-all duration-300 hover:scale-[1.05] hover:bg-emerald-50 hover:text-emerald-600 hover:shadow-lg">
               <Check className="h-5 w-5 text-emerald-500" />
-              <span className="text-base">{keunggulan}</span>
+              <h5 className="text-base">{keunggulan}</h5>
             </span>
           ))}
         </div>
-        <Link
-          to={`/reservasi`}
-          className="mt-8 flex w-fit items-center gap-4 rounded-lg bg-emerald-600 px-6 py-3 text-white shadow-lg transition-all duration-500 hover:from-emerald-700 hover:to-green-600 hover:shadow-xl lg:hover:scale-105"
-        >
+        <Link to={`/reservasi`} className="mt-8 flex w-fit items-center gap-4 rounded-lg bg-emerald-600 px-6 py-3 text-white shadow-lg transition-all duration-500 hover:from-emerald-700 hover:to-green-600 hover:shadow-xl lg:hover:scale-105">
           Konsultasi Sekarang <ChevronRight />
         </Link>
       </div>
-
       <div className="group relative transition-all duration-300">
         <span className="absolute inset-0 z-20 h-full w-full rounded-xl bg-gradient-to-t from-emerald-600 to-transparent opacity-50 transition-all duration-300 group-hover:rotate-2"></span>
         <span className="absolute left-3 top-3 h-full w-full rounded-xl bg-gradient-to-t from-emerald-600 to-green-600 opacity-50 transition-all duration-300 group-hover:rotate-2"></span>

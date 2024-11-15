@@ -1,11 +1,11 @@
 export default function BertemuSangPendiri() {
   return (
-    <section className="mx-auto my-16 flex w-[90%] cursor-default flex-col gap-x-24 lg:flex-row">
+    <section className="mx-auto mb-16 mt-8 flex w-[90%] cursor-default flex-col gap-x-24 lg:flex-row">
       <div className="flex flex-col items-start justify-center lg:w-3/5">
         <h2 className="text-4xl font-bold italic text-emerald-600 lg:text-5xl">
           Bertemu Sang Pendiri
         </h2>
-        <figure className="mt-12 flex">
+        <figure className="mt-7 flex">
           <span className="mr-6 hidden h-full w-1.5 bg-emerald-500 lg:inline" />
           <figcaption className="text-justify text-xl leading-relaxed text-gray-700">
             Inovasi di bidang kesehatan bukan hanya soal teknologi, tetapi soal

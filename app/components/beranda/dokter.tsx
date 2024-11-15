@@ -7,25 +7,13 @@ export default function Dokter() {
   const [startIndex, setStartIndex] = useState<number>(0);
   const itemsPerPage = 5;
   const maxIndex = DataDokter().length - itemsPerPage;
-  const currentDoctors = DataDokter().slice(
-    startIndex,
-    startIndex + itemsPerPage,
-  );
-  const changeIndex = (increment: boolean) =>
-    setStartIndex((prev) =>
-      Math.min(
-        maxIndex,
-        Math.max(0, prev + (increment ? itemsPerPage : -itemsPerPage)),
-      ),
-    );
+  const currentDoctors = DataDokter().slice(startIndex, startIndex + itemsPerPage);
+  const changeIndex = (increment: boolean) => setStartIndex(prev => Math.min(maxIndex, Math.max(0, prev + (increment ? itemsPerPage : -itemsPerPage))));
 
   return (
     <main className="min-h-screen px-4 py-16">
       <div className="mx-auto w-[90%] space-y-12">
-        <section
-          className="relative flex justify-center gap-4"
-          aria-labelledby="doctor-carousel"
-        >
+        <section className="relative flex justify-center gap-4" aria-labelledby="doctor-carousel">
           <h2 id="doctor-carousel" className="sr-only">
             Carousel Daftar Dokter
           </h2>
@@ -35,13 +23,8 @@ export default function Dokter() {
             icon={ChevronLeft}
             label="Sebelumnya"
           />
-          <div
-            className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
-            role="list"
-          >
-            {currentDoctors.map((doctor) => (
-              <DaftarDokter key={doctor.id} {...doctor} />
-            ))}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5" role="list">
+            {currentDoctors.map(doctor => <DaftarDokter key={doctor.id} {...doctor} />)}
           </div>
           <CarouselButton
             disabled={startIndex >= maxIndex}
@@ -61,17 +44,7 @@ export default function Dokter() {
   );
 }
 
-const CarouselButton = ({
-  disabled,
-  onClick,
-  icon: Icon,
-  label,
-}: {
-  disabled: boolean;
-  onClick: () => void;
-  icon: typeof ChevronLeft;
-  label: string;
-}) => (
+const CarouselButton = ({ disabled, onClick, icon: Icon, label }: { disabled: boolean; onClick: () => void; icon: typeof ChevronLeft; label: string }) => (
   <button
     onClick={onClick}
     disabled={disabled}
@@ -84,19 +57,11 @@ const CarouselButton = ({
   </button>
 );
 
-const PaginationStatus = ({
-  startIndex,
-  itemsPerPage,
-  totalItems,
-}: {
-  startIndex: number;
-  itemsPerPage: number;
-  totalItems: number;
-}) => (
-  <p className="cursor-default text-center text-gray-600">
+const PaginationStatus = ({ startIndex, itemsPerPage, totalItems }: { startIndex: number; itemsPerPage: number; totalItems: number }) => (
+  <h5 className="cursor-default text-center text-gray-600">
     Menampilkan {startIndex + 1}-
     {Math.min(startIndex + itemsPerPage, totalItems)} dari {totalItems} dokter
-  </p>
+  </h5>
 );
 
 const Legend = () => (
@@ -107,17 +72,14 @@ const Legend = () => (
     <h3 id="status-legend" className="sr-only">
       Keterangan Status
     </h3>
-    <LegendItem
-      color="bg-emerald-600"
-      label="Tersedia untuk konsultasi online"
-    />
+    <LegendItem color="bg-emerald-600" label="Tersedia untuk konsultasi online" />
     <LegendItem color="bg-emerald-200" label="Jadwal penuh" />
   </section>
 );
 
 const LegendItem = ({ color, label }: { color: string; label: string }) => (
-  <div className="flex cursor-default items-center gap-2">
+  <figure className="flex cursor-default items-center gap-2">
     <span className={`h-3 w-3 rounded-full ${color}`} />
-    <span>{label}</span>
-  </div>
+    <figcaption>{label}</figcaption>
+  </figure>
 );

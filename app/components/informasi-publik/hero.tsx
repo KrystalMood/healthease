@@ -57,9 +57,7 @@ export default function InformasiHero() {
                 onClick={() => handleBulletClick(index)}
                 className={`group relative rounded-full p-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50`}
               >
-                <div
-                  className={`h-3 w-3 rounded-full transition-all duration-300 ${currentPage === index ? "scale-100 bg-white" : "scale-75 bg-gray-400/70 group-hover:scale-100"}`}
-                />
+                <div className={`h-3 w-3 rounded-full transition-all duration-300 ${currentPage === index ? "scale-100 bg-white" : "scale-75 bg-gray-400/70 group-hover:scale-100"}`} />
               </button>
             ))}
           </div>

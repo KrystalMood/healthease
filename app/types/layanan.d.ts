@@ -1,6 +1,5 @@
 export interface DataFiturProps {
-  name: string;
+  title: string;
   description: string;
-  advantages: string[];
-  icon: JSX.Element;
+  image: string;
 }
