@@ -1,5 +1,7 @@
 import { MetaFunction } from "@remix-run/node";
 import Footer from "~/common/footer";
+import Hero from "~/components/pusat-bantuan/hero";
+import KritikDanSaran from "~/components/pusat-bantuan/kritik-dan-saran";
 import Header from "~/common/header";
 
 export const meta: MetaFunction = () => {
@@ -14,8 +16,12 @@ export const meta: MetaFunction = () => {
 };
 
 export default function PusatBantuan() {
-  <>
-    <Header />
-    <Footer />
-  </>
+  return (
+    <>
+      <Header />
+      <Hero />
+      <KritikDanSaran />
+      <Footer />
+    </>
+  );
 }
