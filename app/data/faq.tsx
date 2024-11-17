@@ -1,4 +1,5 @@
-import { DataFAQProps } from "~/types/faq";
+import { DataFAQProps, PopularQuestionProps, ContactProps } from "~/types/faq";
+import { Mail, MessageCircle, Phone } from "lucide-react";
 
 export function DataFAQ(): DataFAQProps[] {
   return [
@@ -146,5 +147,51 @@ export function DataFAQ(): DataFAQProps[] {
       question: "Bagaimana cara melaporkan bug atau kesalahan pada aplikasi?",
       answer: "Anda dapat melaporkannya melalui email ke techsupport@healthease.com dengan menyertakan detail masalah yang Anda alami.",
     },
+  ];
+}
+
+export function PopularQuestions(): PopularQuestionProps[] {
+  return [
+    {
+      id: 1,
+      question: "Bagaimana cara mendaftar di HealthEase?",
+      answer: "Kunjungi halaman Daftar, isi formulir dengan data diri Anda, atau daftar lebih cepat menggunakan akun Google Anda."
+    },
+    {
+      id: 2,
+      question: "Apakah layanan konsultasi tersedia 24 jam?",
+      answer: "Ya, layanan konsultasi online kami tersedia 24/7 dengan dokter yang siap membantu Anda."
+    },
+    {
+      id: 3,
+      question: "Berapa biaya konsultasi online?",
+      answer: "Biaya konsultasi bervariasi tergantung spesialisasi dokter. Untuk pengguna baru, kami menyediakan konsultasi pertama gratis!"
+    }
+  ];
+}
+
+export function ContactData(): ContactProps[] {
+  return [
+    {
+      id: 1,
+      icon: <Phone className="h-6 w-6 text-emerald-500" />,
+      title: "Telepon",
+      detail: "0800-123-4567",
+      description: "Tersedia 24/7 untuk bantuan darurat"
+    },
+    {
+      id: 2,
+      icon: <Mail className="h-6 w-6 text-emerald-500" />,
+      title: "Email",
+      detail: "support@healthease.com",
+      description: "Respon cepat dalam 24 jam"
+    },
+    {
+      id: 3,
+      icon: <MessageCircle className="h-6 w-6 text-emerald-500" />,
+      title: "Live Chat",
+      detail: "Chat Langsung",
+      description: "Bantuan instan dari tim kami"
+    }
   ];
 }

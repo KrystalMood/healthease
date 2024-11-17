@@ -3,6 +3,8 @@ import Header from "~/common/header";
 import Hero from "~/components/faq/hero";
 import DaftarPertanyaan from "~/components/faq/daftar-pertanyaan";
 import Footer from "~/common/footer";
+import PertanyaanPopuler from "~/components/faq/pertanyaan-populer";
+import HubungiKami from "~/components/faq/hubungi-kami";
 
 export const meta: MetaFunction = () => {
   return [
@@ -20,7 +22,9 @@ export default function FAQ() {
     <>
       <Header />
       <Hero />
+      <PertanyaanPopuler />
       <DaftarPertanyaan />
+      <HubungiKami />
       <Footer />
     </>
   );
