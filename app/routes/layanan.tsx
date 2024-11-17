@@ -2,10 +2,8 @@ import type { MetaFunction } from "@remix-run/node";
 import Header from "~/common/header";
 import Hero from "~/components/layanan/hero";
 import LayananKesehatanTerlengkap from "~/components/layanan/layanan-kesehatan-terlengkap";
-// import LayananFitur from "~/components/layanan/fitur"; (2)
-// import LayananOutro from "~/components/layanan/outro"; (3)
-import Footer from "~/common/footer";
 import Fitur from "~/components/layanan/fitur";
+import Footer from "~/common/footer";
 
 export const meta: MetaFunction = () => {
   return [
