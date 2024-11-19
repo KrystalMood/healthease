@@ -20,14 +20,14 @@ export default function Hero(): JSX.Element {
         </div>
 
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
+          <h2 className="text-2xl leading-tight font-bold text-white sm:text-3xl lg:text-4xl lg:leading-tight">
             Mengapa Memilih{" "}
             <span className="bg-gradient-to-r from-emerald-300 to-teal-200 bg-clip-text text-transparent">
               Pusat Bantuan Kami
             </span>
             ?
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl px-4 text-base text-white sm:mt-4 sm:px-0 sm:text-lg">
+          <p className="mx-auto mt-3 max-w-2xl px-4 text-base leading-relaxed text-white/90 sm:mt-4 sm:px-0 sm:text-lg">
             Kami berkomitmen untuk memberikan pengalaman terbaik dalam membantu
             menyelesaikan setiap kebutuhan Anda
           </p>
@@ -41,22 +41,22 @@ export default function Hero(): JSX.Element {
 
         <div className="mt-16 flex flex-col flex-wrap items-center justify-center gap-8 rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-600 px-6 py-10 text-white sm:mt-20 sm:flex-row sm:gap-x-16 sm:gap-y-8 sm:px-8 sm:py-12">
           <div className="text-center">
-            <p className="text-3xl font-bold sm:text-4xl">5k+</p>
-            <p className="mt-1 text-sm text-emerald-100 sm:text-base">
+            <p className="text-3xl font-bold tracking-tight sm:text-4xl">5k+</p>
+            <p className="mt-1 text-sm leading-normal text-emerald-100/90 sm:text-base">
               Masalah Terselesaikan
             </p>
           </div>
           <div className="hidden h-16 w-px bg-emerald-400 sm:block" />
           <div className="text-center">
-            <p className="text-3xl font-bold sm:text-4xl">4.9/5</p>
-            <p className="mt-1 text-sm text-emerald-100 sm:text-base">
+            <p className="text-3xl font-bold tracking-tight sm:text-4xl">4.9/5</p>
+            <p className="mt-1 text-sm leading-normal text-emerald-100/90 sm:text-base">
               Rating Kepuasan
             </p>
           </div>
           <div className="hidden h-16 w-px bg-emerald-400 sm:block" />
           <div className="text-center">
-            <p className="text-3xl font-bold sm:text-4xl">&lt;5 min</p>
-            <p className="mt-1 text-sm text-emerald-100 sm:text-base">
+            <p className="text-3xl font-bold tracking-tight sm:text-4xl">&lt;5 min</p>
+            <p className="mt-1 text-sm leading-normal text-emerald-100/90 sm:text-base">
               Waktu Respon
             </p>
           </div>

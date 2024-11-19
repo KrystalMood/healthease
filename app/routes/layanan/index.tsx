@@ -5,6 +5,7 @@ import LayananKesehatanTerlengkap from "~/components/layanan/layanan-kesehatan-t
 import Fitur from "~/components/layanan/fitur";
 import Footer from "~/common/footer";
 import { Outlet } from "@remix-run/react";
+import { useRef } from "react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -18,12 +19,16 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Layanan() {
+  const fiturRef = useRef<HTMLElement>(null);
+  const scrollToFitur = () => {
+    fiturRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <>
       <Header />
-      <Hero />
+      <Hero onLearnMore={scrollToFitur} />
       <LayananKesehatanTerlengkap />
-      <Fitur />
+      <Fitur ref={fiturRef} />
       <Footer />
       <Outlet />
     </>

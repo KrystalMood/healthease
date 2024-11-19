@@ -51,7 +51,9 @@ export default function FormulirMasuk(): JSX.Element {
             Lupa Kata Sandi
           </h4>
         </Link>
-        <button type="submit" className="mx-auto mt-4 w-[70%] rounded-lg bg-emerald-500 py-3 font-bold text-white transition-all duration-300 ease-in-out lg:hover:bg-emerald-600">
+        <button 
+        onClick={() => window.location.href = "/dashboard"}
+        type="submit" className="mx-auto mt-4 w-[70%] rounded-lg bg-emerald-500 py-3 font-bold text-white transition-all duration-300 ease-in-out lg:hover:bg-emerald-600">
           Masuk
         </button>
       </Form>

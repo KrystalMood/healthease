@@ -1,6 +1,6 @@
 import { Heart, Info, Stethoscope, Thermometer } from "lucide-react";
 
-export default function Hero(): JSX.Element {
+export default function Hero({ onLearnMore }: { onLearnMore: () => void }): JSX.Element {
   return (
     <section className="mx-auto flex min-h-[90vh] w-[90%] items-center justify-between gap-x-24 bg-white py-36 lg:py-28">
       <div className="flex flex-col text-center lg:text-left">
@@ -56,7 +56,9 @@ export default function Hero(): JSX.Element {
             <span>50k+ Pasien Terlayani</span>
           </div>
         </div>
-        <button className="group mx-auto mt-8 flex w-fit items-center justify-between rounded-lg border-2 border-emerald-600 bg-gradient-to-br from-slate-50 to-gray-50 px-7 py-3 text-lg font-semibold text-gray-700 shadow-md transition-all duration-300 hover:scale-105 lg:mx-0">
+        <button 
+        onClick={onLearnMore}
+        className="group mx-auto mt-8 flex w-fit items-center justify-between rounded-lg border-2 border-emerald-600 bg-gradient-to-br from-slate-50 to-gray-50 px-7 py-3 text-lg font-semibold text-gray-700 shadow-md transition-all duration-300 hover:scale-105 lg:mx-0">
           Pelajari Lebih Lanjut
           <Info
             className="ml-4 text-gray-700 transition-all group-hover:rotate-12"

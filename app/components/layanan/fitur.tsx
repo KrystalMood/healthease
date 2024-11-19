@@ -2,12 +2,13 @@ import { useState } from "react";
 import DataFitur from "~/data/layanan";
 import DaftarFitur from "./daftar-fitur";
 import HeaderFitur from "./header-fitur";
+import { forwardRef } from "react";
 
-export default function Fitur(): JSX.Element {
+const Fitur = forwardRef<HTMLElement>((_, ref) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section className="mx-auto mb-20 flex w-[90%] gap-x-12">
+    <section ref={ref} className="mx-auto mb-20 flex w-[90%] gap-x-12">
       <div className="relative hidden lg:flex">
         <span className="absolute inset-0 -z-10 rotate-3 rounded-xl bg-gradient-to-r from-green-400 to-emerald-500" />
         <img
@@ -26,4 +27,8 @@ export default function Fitur(): JSX.Element {
       </div>
     </section>
   );
-}
+});
+
+Fitur.displayName = "Fitur";
+export default Fitur;
+
