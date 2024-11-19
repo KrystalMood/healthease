@@ -4,6 +4,7 @@ import Hero from "~/components/layanan/hero";
 import LayananKesehatanTerlengkap from "~/components/layanan/layanan-kesehatan-terlengkap";
 import Fitur from "~/components/layanan/fitur";
 import Footer from "~/common/footer";
+import { Outlet } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -24,6 +25,7 @@ export default function Layanan() {
       <LayananKesehatanTerlengkap />
       <Fitur />
       <Footer />
+      <Outlet />
     </>
   );
 }

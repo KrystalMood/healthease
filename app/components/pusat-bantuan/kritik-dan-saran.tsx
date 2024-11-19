@@ -12,7 +12,7 @@ export default function KritikDanSaran(): JSX.Element {
   const [rating, setRating] = useState<number>(0);
 
   return (
-    <article className="h-[850px] rounded-xl bg-white p-8 shadow-2xl lg:p-12">
+    <article className="h-[850px] rounded-xl border-4 border-gray-100 bg-white p-8 shadow-2xl transition-all duration-300 hover:scale-[1.005] hover:border-emerald-500 lg:p-12">
       <header className="mb-8 flex flex-col items-center text-center">
         <MessageSquare
           className="h-12 w-12 text-emerald-600"

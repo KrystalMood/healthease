@@ -2,8 +2,8 @@ import { Mail, MapPin, PhoneCall } from "lucide-react";
 
 export default function HotLine(): JSX.Element {
   return (
-    <section className="mx-auto h-[850px] w-[90%] rounded-xl shadow-2xl">
-      <article className="h-full rounded-xl bg-gradient-to-br from-emerald-600 to-green-600 p-8 text-white shadow-lg lg:p-12">
+    <section className="mx-auto h-[850px] w-[90%] rounded-xl border-4 border-gray-200 shadow-2xl transition-all duration-300 hover:scale-[1.005] hover:border-emerald-500">
+      <article className="h-full rounded-lg bg-gradient-to-br from-emerald-600 to-green-600 p-8 text-white shadow-lg lg:p-12">
         <header className="mb-8">
           <h2 className="text-3xl font-bold lg:text-4xl">Hubungi Kami</h2>
           <p className="mt-4 text-lg text-emerald-50">

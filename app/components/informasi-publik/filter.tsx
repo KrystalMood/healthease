@@ -5,7 +5,7 @@ import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { DataFilter } from "~/data/informasi-publik";
 
 export default function Filter(): JSX.Element {
-  const [currentFilter, setCurrentFilter] = useState<string>("Semua");
+  const [currentFilter, setCurrentFilter] = useState<string>("Terbaru");
   const [sortBy, setSortBy] = useState<string>("Terbaru");
   const [sortOptions] = useState<string[]>([
     "Terbaru",
@@ -16,7 +16,7 @@ export default function Filter(): JSX.Element {
   const [showSorting, setShowSorting] = useState<boolean>(false);
 
   return (
-    <section className="mx-auto mt-14 w-[90%]">
+    <section className="mx-auto mt-8 w-[90%]">
       <h2 className="mb-3 cursor-default text-4xl font-bold text-slate-800">
         Informasi Publik
       </h2>
@@ -25,21 +25,7 @@ export default function Filter(): JSX.Element {
         sesuai dengan Anda.
       </p>
       <nav className="flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
-        <div className="flex gap-3 overflow-x-auto pb-2 lg:pb-0">
-          {DataFilter().map((list) => (
-            <button
-              onClick={() => setCurrentFilter(list.filter)}
-              key={list.id}
-              className={`rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 ease-in-out ${
-                currentFilter === list.filter
-                  ? "bg-slate-800 text-white shadow-md"
-                  : "border-2 border-slate-300 bg-white text-slate-600 hover:border-slate-800 hover:bg-slate-100"
-              }`}
-            >
-              {list.filter}
-            </button>
-          ))}
-        </div>
+        <div></div>
         <div className="relative flex items-center justify-end lg:justify-start">
           <span className="mr-4 cursor-default font-medium text-slate-600">
             Urutkan:
