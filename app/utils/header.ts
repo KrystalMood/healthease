@@ -5,7 +5,7 @@ export const NOT_TOP_THRESHOLD = 0.01;
 
 export const MENU_ITEMS = [
   "Layanan",
-  "Informasi Publik",
+  "Informasi Publik", 
   "Tentang Kami",
 ] as const;
 
@@ -18,37 +18,16 @@ export const ROUTE_MAP = {
 export const getLinkPath = (name: (typeof MENU_ITEMS)[number]) =>
   ROUTE_MAP[name] ?? "/";
 
-<<<<<<< HEAD
 export const createScrollHandler = (
   setIsScrolled: (value: boolean) => void,
   setIsNotTop: (value: boolean) => void,
 ) =>
-=======
-export const createScrollHandler = (setIsScrolled: (value: boolean) => void, setIsNotTop: (value: boolean) => void) =>
->>>>>>> da83bbcf7c8fce9888591793fc6c09fddfb6e81f
   throttle(() => {
     const scrollPosition = window.scrollY;
     setIsScrolled(scrollPosition > window.innerHeight * SCROLL_THRESHOLD);
     setIsNotTop(scrollPosition > window.innerHeight * NOT_TOP_THRESHOLD);
   }, 100);
 
-<<<<<<< HEAD
-export const getMenuItemClassName = (
-  isScrolled: boolean,
-  isActive: boolean,
-) => `
-  inline-block font-medium transition-all duration-300 
-  hover:scale-105 hover:text-emerald-400
-  ${
-    isActive
-      ? `border-b-2 border-emerald-${isScrolled ? "600" : "300"} text-emerald-${isScrolled ? "600" : "300"}`
-      : `${isScrolled ? "text-gray-800" : "text-white"} hover:border-b-2 hover:border-emerald-400`
-  }
-`;
-
-export const isPublicPage = (pathname: string) =>
-  ["/informasi-publik", "/faq"].includes(pathname);
-=======
 export const getMenuItemClassName = (isScrolled: boolean, isActive: boolean) => 
   `inline-block font-medium transition-all duration-300 hover:scale-105 hover:text-emerald-400
   ${
@@ -58,4 +37,3 @@ export const getMenuItemClassName = (isScrolled: boolean, isActive: boolean) =>
 `;
 
 export const isPublicPage = (pathname: string) => ["/informasi-publik", "/faq"].includes(pathname);
->>>>>>> da83bbcf7c8fce9888591793fc6c09fddfb6e81f
