@@ -5,6 +5,15 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   plugins: [
     remix({
+      routes(defineRoutes) {
+        return defineRoutes((route) => {
+          route("dashboard", "routes/dashboard/index.tsx", () => {
+            route("jadwal", "routes/dashboard/jadwal.tsx");
+            route("riwayat", "routes/dashboard/riwayat.tsx");
+            route("pengaturan", "routes/dashboard/pengaturan.tsx");
+          });
+        });
+      },
       future: {
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,

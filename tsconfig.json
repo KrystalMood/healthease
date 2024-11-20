@@ -6,7 +6,7 @@
     "**/.server/**/*.tsx",
     "**/.client/**/*.ts",
     "**/.client/**/*.tsx"
-, "app/routes/layanan/$slug.tsx"  ],
+, "app/routes/layanan/$slug.tsx", "app/routes/dashboard/$jadwal.tsx"  ],
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": ".",
