@@ -1,8 +1,9 @@
+import { Link } from "@remix-run/react";
 import { Mail, MapPin, PhoneCall } from "lucide-react";
 
 export default function HotLine(): JSX.Element {
   return (
-    <section className="mx-auto h-[850px] w-[90%] rounded-xl border-4 border-gray-200 shadow-2xl transition-all duration-300 hover:scale-[1.005] hover:border-emerald-500">
+    <section className="mx-auto h-fit w-[90%] rounded-xl border-4 border-gray-200 shadow-2xl transition-all duration-300 hover:scale-[1.005] hover:border-emerald-500">
       <article className="h-full rounded-lg bg-gradient-to-br from-emerald-600 to-green-600 p-8 text-white shadow-lg lg:p-12">
         <header className="mb-8">
           <h2 className="text-3xl font-bold lg:text-4xl">Hubungi Kami</h2>
@@ -11,7 +12,6 @@ export default function HotLine(): JSX.Element {
             Jangan ragu untuk menghubungi kami melalui:
           </p>
         </header>
-
         <nav className="mt-12 space-y-8" aria-label="Informasi Kontak">
           <article className="flex items-start space-x-4">
             <PhoneCall className="h-6 w-6 shrink-0" aria-hidden="true" />
@@ -24,29 +24,21 @@ export default function HotLine(): JSX.Element {
               </address>
             </div>
           </article>
-
           <article className="flex items-start space-x-4">
             <Mail className="h-6 w-6 shrink-0" aria-hidden="true" />
             <div>
               <h3 className="font-semibold">Email</h3>
               <address className="mt-1 not-italic text-emerald-50">
-                <a
-                  href="mailto:bantuan@healthease.com"
-                  className="hover:underline"
-                >
+                <Link to="mailto:bantuan@healthease.com" className="hover:underline">
                   bantuan@healthease.com
-                </a>
+                </Link>
                 <br />
-                <a
-                  href="mailto:info@healthease.com"
-                  className="hover:underline"
-                >
+                <Link to="mailto:info@healthease.com" className="hover:underline">
                   info@healthease.com
-                </a>
+                </Link>
               </address>
             </div>
           </article>
-
           <article className="flex items-start space-x-4">
             <MapPin className="h-6 w-6 shrink-0" aria-hidden="true" />
             <div>
@@ -59,7 +51,6 @@ export default function HotLine(): JSX.Element {
             </div>
           </article>
         </nav>
-
         <aside className="mt-12">
           <h3 className="text-xl font-semibold">Jam Operasional</h3>
           <dl className="mt-4 space-y-2 text-emerald-50">

@@ -1,18 +1,11 @@
-import {
-  MessageSquare,
-  Star,
-  Send,
-  PhoneCall,
-  Mail,
-  MapPin,
-} from "lucide-react";
+import { MessageSquare, Star, Send } from "lucide-react";
 import { useState } from "react";
 
 export default function KritikDanSaran(): JSX.Element {
   const [rating, setRating] = useState<number>(0);
 
   return (
-    <article className="h-[850px] rounded-xl border-4 border-gray-100 bg-white p-8 shadow-2xl transition-all duration-300 hover:scale-[1.005] hover:border-emerald-500 lg:p-12">
+    <article className="h-fit rounded-xl border-4 border-gray-100 bg-white p-8 shadow-2xl transition-all duration-300 hover:scale-[1.005] hover:border-emerald-500 lg:p-12">
       <header className="mb-8 flex flex-col items-center text-center">
         <MessageSquare
           className="h-12 w-12 text-emerald-600"
@@ -25,17 +18,12 @@ export default function KritikDanSaran(): JSX.Element {
           Bantu kami meningkatkan layanan dengan memberikan masukan Anda.
         </p>
       </header>
-
       <form className="space-y-6" aria-label="Form Kritik dan Saran">
         <fieldset className="flex flex-col items-center space-y-2">
           <legend className="text-lg font-medium text-gray-700">
             Berikan Penilaian
           </legend>
-          <div
-            className="flex space-x-1"
-            role="group"
-            aria-label="Rating Bintang"
-          >
+          <div className="flex space-x-1" role="group" aria-label="Rating Bintang">
             {[1, 2, 3, 4, 5].map((star) => (
               <button
                 key={star}
@@ -56,15 +44,10 @@ export default function KritikDanSaran(): JSX.Element {
             ))}
           </div>
         </fieldset>
-
         <fieldset className="space-y-4">
           <legend className="sr-only">Informasi Pengirim</legend>
-
           <div>
-            <label
-              htmlFor="nama"
-              className="block text-sm font-medium text-gray-700"
-            >
+            <label htmlFor="nama" className="block text-sm font-medium text-gray-700">
               Nama Lengkap
             </label>
             <input
@@ -77,12 +60,8 @@ export default function KritikDanSaran(): JSX.Element {
               aria-required="true"
             />
           </div>
-
           <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
               Email
             </label>
             <input
@@ -95,12 +74,8 @@ export default function KritikDanSaran(): JSX.Element {
               aria-required="true"
             />
           </div>
-
           <div>
-            <label
-              htmlFor="kategori"
-              className="block text-sm font-medium text-gray-700"
-            >
+            <label htmlFor="kategori" className="block text-sm font-medium text-gray-700">
               Kategori
             </label>
             <select
@@ -119,12 +94,8 @@ export default function KritikDanSaran(): JSX.Element {
               <option value="lainnya">Lainnya</option>
             </select>
           </div>
-
           <div>
-            <label
-              htmlFor="pesan"
-              className="block text-sm font-medium text-gray-700"
-            >
+            <label htmlFor="pesan" className="block text-sm font-medium text-gray-700">
               Pesan
             </label>
             <textarea
@@ -139,24 +110,16 @@ export default function KritikDanSaran(): JSX.Element {
             />
           </div>
         </fieldset>
-
         <div className="flex justify-end">
-          <button
-            type="submit"
-            className="inline-flex items-center rounded-lg bg-emerald-600 px-6 py-3 text-white transition-all duration-300 hover:scale-105 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
-          >
+          <button type="submit" className="inline-flex items-center rounded-lg bg-emerald-600 px-6 py-3 text-white transition-all duration-300 hover:scale-105 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
             <Send className="mr-2 h-5 w-5" aria-hidden="true" />
             <span>Kirim Masukan</span>
           </button>
         </div>
       </form>
-
       <footer className="mt-6 text-sm text-gray-600">
         <p className="flex items-center">
-          <span
-            className="mr-2 h-1.5 w-1.5 rounded-full bg-emerald-500"
-            aria-hidden="true"
-          ></span>
+          <span className="mr-2 h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
           Masukan Anda akan kami tinjau dalam 1-2 hari kerja
         </p>
       </footer>

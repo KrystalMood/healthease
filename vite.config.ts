@@ -15,7 +15,6 @@ export default defineConfig({
             route("beranda", "routes/dashboard/beranda.tsx");
             route("jadwal", "routes/dashboard/jadwal.tsx");
             route("riwayat", "routes/dashboard/riwayat.tsx");
-            route("pengaturan", "routes/dashboard/pengaturan.tsx");
           });
         });
       },
