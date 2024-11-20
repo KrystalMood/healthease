@@ -77,7 +77,7 @@ export default function Formulir(): JSX.Element {
           </h4>
         </Link>
         <button
-          onClick={() => window.location.href = "/dashboard"}
+          onClick={() => window.location.href = "/dashboard/beranda"}
           type="submit"
           className="mx-auto mt-4 w-[70%] rounded-lg bg-emerald-500 py-3 font-bold text-white transition-all duration-300 ease-in-out lg:hover:bg-emerald-600"
         >

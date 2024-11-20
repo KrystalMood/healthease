@@ -19,7 +19,7 @@ export default function DashboardLayout({
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { icon: Home, label: "Beranda", path: "/dashboard" },
+    { icon: Home, label: "Beranda", path: "/dashboard/beranda" },
     { icon: Calendar, label: "Jadwal", path: "/dashboard/jadwal" },
     { icon: FileText, label: "Riwayat", path: "/dashboard/riwayat" },
     { icon: Settings, label: "Pengaturan", path: "/dashboard/pengaturan" },
