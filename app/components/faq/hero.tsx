@@ -1,6 +1,6 @@
 export default function Hero(): JSX.Element {
   return (
-    <section className="relative flex h-[80vh] w-full cursor-default flex-col items-center justify-center bg-[url('/hero-4.jpg')] bg-cover bg-center bg-no-repeat py-40 text-white">
+    <section className="relative flex w-full cursor-default flex-col items-center justify-center bg-[url('/hero-4.jpg')] bg-cover bg-center bg-no-repeat py-40 text-white">
       <span className="absolute inset-0 bg-gradient-to-tr from-emerald-600 to-green-600 opacity-75" />
       <div className="relative z-10 w-[90%] text-center lg:w-3/5">
         <h4 className="text-xl font-semibold uppercase tracking-wider">

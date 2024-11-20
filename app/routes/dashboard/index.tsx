@@ -1,117 +1,75 @@
-import {
-  Calendar,
-  Users,
-  Activity,
-  Clock,
-  BarChart2,
-  List,
-  FileText,
-} from "lucide-react";
+import type { MetaFunction } from "@remix-run/node";
+import { Outlet } from "@remix-run/react";
+import { BarChart2, List, FileText } from "lucide-react";
+import { appointments, stats } from "~/data/dashboard";
 import DashboardLayout from "~/components/dashboard/layout";
 import StatsCard from "~/components/dashboard/stats-card";
-import AppointmentList from "~/components/dashboard/appointment-list";
 import ActivityChart from "~/components/dashboard/activity-chart";
-import { Outlet } from "@remix-run/react";
+import AppointmentList from "~/components/dashboard/appointment-list";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Dashboard | HealthEase" },
+    { name: "description", content: "" },
+    { property: "og:title", content: "Dashboard | HealthEase" },
+    { property: "og:description", content: "" },
+    { property: "twitter:title", content: "Dashboard | HealthEase" },
+    { property: "twitter:description", content: "" },
+  ];
+};
 
 export default function Dashboard() {
-  const stats = [
-    {
-      title: "Total Konsultasi",
-      value: "24",
-      icon: Calendar,
-      trend: { value: 12, isPositive: true },
-    },
-    {
-      title: "Dokter Aktif",
-      value: "8",
-      icon: Users,
-    },
-    {
-      title: "Tingkat Kepuasan",
-      value: "92%",
-      icon: Activity,
-      trend: { value: 3, isPositive: true },
-    },
-    {
-      title: "Waktu Respons",
-      value: "< 5 min",
-      icon: Clock,
-      trend: { value: 10, isPositive: true },
-    },
-  ];
-
-  const appointments = [
-    {
-      id: 1,
-      doctor: "Dr. Budi Santoso",
-      specialty: "Dokter Jantung",
-      date: "2024-03-20",
-      time: "09:00",
-      status: "akan datang",
-    },
-    {
-      id: 2,
-      doctor: "Dr. Siti Rahmawati",
-      specialty: "Dokter Anak",
-      date: "2024-03-21",
-      time: "14:30",
-      status: "akan datang",
-    },
-  ];
-
   return (
     <>
       <Outlet />
       <DashboardLayout>
         <div className="space-y-6">
-          <div className="flex items-center justify-between">
+          <header className="flex items-center justify-between">
             <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
             <div className="flex items-center space-x-4">
-              <button className="flex items-center space-x-2 rounded-lg border border-gray-200 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50">
-                <FileText className="h-4 w-4" />
+              <button className="flex items-center space-x-2 rounded-lg border border-gray-200 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50" aria-label="Export data">
+                <FileText className="h-4 w-4" aria-hidden="true" />
                 <span>Export</span>
               </button>
-              <button className="flex items-center space-x-2 rounded-lg bg-emerald-500 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-600">
-                <List className="h-4 w-4" />
+              <button className="flex items-center space-x-2 rounded-lg bg-emerald-500 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-600" aria-label="Filter data">
+                <List className="h-4 w-4" aria-hidden="true" />
                 <span>Filter</span>
               </button>
             </div>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <StatsCard key={stat.title} {...stat} />
-            ))}
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-2">
-            <div className="border-b border-gray-200 bg-white p-4">
-              <div className="flex items-center justify-between">
-                <h2 className="text-lg font-semibold text-gray-900">
+          </header>
+          <section aria-labelledby="stats-section-title" className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <h2 id="stats-section-title" className="sr-only">
+              Statistik
+            </h2>
+            {stats.map((stat) => <StatsCard key={stat.title} {...stat} />)}
+          </section>
+          <section className="grid gap-6 lg:grid-cols-2">
+            <article aria-labelledby="activity-title" className="border-b border-gray-200 bg-white p-4">
+              <header className="flex items-center justify-between">
+                <h2 id="activity-title" className="text-lg font-semibold text-gray-900">
                   Aktivitas Konsultasi
                 </h2>
-                <button className="inline-flex items-center text-sm font-medium text-emerald-600 hover:text-emerald-700">
+                <button className="inline-flex items-center text-sm font-medium text-emerald-600 hover:text-emerald-700" aria-label="Lihat detail aktivitas konsultasi">
                   Lihat Detail
-                  <BarChart2 className="ml-2 h-4 w-4" />
+                  <BarChart2 className="ml-2 h-4 w-4" aria-hidden="true" />
                 </button>
-              </div>
+              </header>
               <div className="p-6">
                 <ActivityChart />
               </div>
-            </div>
-
-            <div className="rounded-lg border border-gray-200 bg-white p-6">
-              <div className="mb-4 flex items-center justify-between">
-                <h2 className="text-lg font-semibold text-gray-900">
+            </article>
+            <article aria-labelledby="schedule-title" className="rounded-lg border border-gray-200 bg-white p-6">
+              <header className="mb-4 flex items-center justify-between">
+                <h2 id="schedule-title" className="text-lg font-semibold text-gray-900">
                   Jadwal Konsultasi
                 </h2>
-                <button className="text-sm text-emerald-600 hover:text-emerald-700">
+                <button className="text-sm text-emerald-600 hover:text-emerald-700" aria-label="Lihat semua jadwal konsultasi">
                   Lihat Semua
                 </button>
-              </div>
+              </header>
               <AppointmentList appointments={appointments} />
-            </div>
-          </div>
+            </article>
+          </section>
         </div>
       </DashboardLayout>
     </>

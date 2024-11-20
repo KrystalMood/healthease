@@ -1,6 +1,5 @@
-import { useParams } from "@remix-run/react";
+import { Link, useParams } from "@remix-run/react";
 import { ArrowLeft } from "lucide-react";
-import { Link } from "@remix-run/react";
 import DataFitur from "~/data/layanan";
 import Header from "~/common/header";
 import Footer from "~/common/footer";

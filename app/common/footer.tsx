@@ -18,20 +18,20 @@ export default function Footer(): JSX.Element {
             HealthEase
           </h3>
           <h5 className="mt-4 cursor-default text-center text-base font-thin lg:text-left">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam tempore
-            reiciendis maxime itaque ab fugiat quod quaerat placeat repellat
-            sint!
+            HealthEase merupakan situs web yang menyediakan layanan kesehatan
+            virtual. Dengan teknologi canggih, konsultasi jauh lebih mudah
+            diakses kapan saja dan dimana saja.
           </h5>
         </address>
         <nav className="mt-14 grid grid-cols-1 gap-8 lg:mt-0 lg:w-2/3 lg:grid-cols-2" aria-label="Navigasi">
           <h3 className="cursor-default text-xl font-extrabold tracking-wide lg:text-2xl">
-            Lorem Ipsum
+            Kesehatan Anda
             <br />
-            Dolor Sit Amet
+            Prioritas Kami
           </h3>
           <div className="grid grid-cols-2 gap-8">
             <ul className="flex flex-col gap-y-3" aria-label="Informasi">
-              {["Profil", "Layanan", "Informasi Publik"].map((menu, index) => footer_menu(menu, index))}
+              {["Dashboard", "Layanan", "Informasi Publik"].map((menu, index) => footer_menu(menu, index))}
             </ul>
             <ul className="flex flex-col gap-y-3" aria-label="Bantuan">
               {["Tentang Kami", "FAQ", "Pusat Bantuan"].map((menu, index) => footer_menu(menu, index))}

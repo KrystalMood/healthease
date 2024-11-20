@@ -1,6 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import Karosel from "~/components/akun/karosel";
-import FormulirMasuk from "~/components/akun/formulir-masuk";
+import Formulir from "~/components/akun/formulir";
 
 export const meta: MetaFunction = () => {
   return [
@@ -28,8 +28,8 @@ export const meta: MetaFunction = () => {
 export default function Masuk() {
   return (
     <main className="grid min-h-screen grid-cols-1 lg:grid-cols-2">
-      <FormulirMasuk />
       <Karosel />
+      <Formulir />
     </main>
   );
 } 
