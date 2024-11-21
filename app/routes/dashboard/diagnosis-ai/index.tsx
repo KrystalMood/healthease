@@ -1,10 +1,10 @@
+import DiagnosisAI from "~/components/dashboard/diagnosis-ai";
 import DashboardLayout from "~/components/dashboard/layout";
-import Riwayat from "~/components/dashboard/riwayat";
 
-export default function RiwayatPage() {
+export default function FiturAI() {
   return (
     <DashboardLayout>
-      <Riwayat />
+      <DiagnosisAI />
     </DashboardLayout>
   );
 }

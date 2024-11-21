@@ -17,6 +17,11 @@ export default defineConfig({
             route("jadwal", "routes/dashboard/jadwal.tsx");
             route("riwayat", "routes/dashboard/riwayat.tsx");
             route("pengaturan", "routes/dashboard/pengaturan.tsx");
+            route("fitur-ai", "routes/dashboard/diagnosis-ai/index.tsx", () => {
+              route("diagnosis", "routes/dashboard/diagnosis-ai/diagnosis.tsx");
+            });
+            route("pengingat-obat", "routes/dashboard/pengingat-obat.tsx");
+            route("telemedicine", "routes/dashboard/telemedicine.tsx");
           });
         });
       },

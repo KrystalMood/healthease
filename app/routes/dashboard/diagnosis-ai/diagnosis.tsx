@@ -1,10 +1,9 @@
 import DashboardLayout from "~/components/dashboard/layout";
-import Riwayat from "~/components/dashboard/riwayat";
 
-export default function RiwayatPage() {
+export default function Diagnosis() {
   return (
     <DashboardLayout>
-      <Riwayat />
+      <div>Diagnosis</div>
     </DashboardLayout>
-  );
+  )
 }

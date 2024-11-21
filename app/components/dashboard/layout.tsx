@@ -1,14 +1,37 @@
 import { Link } from "@remix-run/react";
 import { useState } from "react";
-import { Bell, Calendar, FileText, Home, Menu, Settings, User, X } from "lucide-react";
+import {
+  Bell,
+  Calendar,
+  FileText,
+  Home,
+  Menu,
+  Settings,
+  User,
+  X,
+  Brain,
+  PillBottle,
+  Phone,
+} from "lucide-react";
 
-export default function DashboardLayout({ children }: { children: React.ReactNode }): JSX.Element {
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}): JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
     { icon: Home, label: "Beranda", path: "/dashboard/beranda" },
     { icon: Calendar, label: "Jadwal", path: "/dashboard/jadwal" },
     { icon: FileText, label: "Riwayat", path: "/dashboard/riwayat" },
+    {
+      icon: PillBottle,
+      label: "Pengingat Obat",
+      path: "/dashboard/pengingat-obat",
+    },
+    { icon: Brain, label: "Diagnosis AI", path: "/dashboard/fitur-ai" },
+    { icon: Phone, label: "Telemedicine", path: "/dashboard/telemedicine" },
     { icon: Settings, label: "Pengaturan", path: "/dashboard/pengaturan" },
   ];
 
@@ -23,7 +46,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <Link to="/" className="flex items-center" aria-label="Logo">
               <img src="/icon.png" alt="Logo" className="h-8 w-auto" />
             </Link>
-            <button onClick={() => setIsOpen(false)} className="lg:hidden" aria-label="Close sidebar">
+            <button
+              onClick={() => setIsOpen(false)}
+              className="lg:hidden"
+              aria-label="Close sidebar"
+            >
               <X className="h-6 w-6 text-gray-600" />
             </button>
           </header>
@@ -44,20 +71,34 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       </aside>
       <div className="flex flex-1 flex-col">
         <header className="flex h-16 items-center justify-between border-b bg-white px-4 lg:px-6">
-          <button onClick={() => setIsOpen(true)} className="lg:hidden" aria-label="Open sidebar">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="lg:hidden"
+            aria-label="Open sidebar"
+          >
             <Menu className="h-6 w-6 text-gray-600" />
           </button>
           <div className="flex items-center space-x-4">
-            <button className="rounded-full p-1 text-gray-600 hover:bg-gray-100" aria-label="Notifications">
+            <button
+              className="rounded-full p-1 text-gray-600 hover:bg-gray-100"
+              aria-label="Notifications"
+            >
               <Bell className="h-6 w-6" />
             </button>
-            <div className="flex items-center space-x-2 rounded-full bg-gray-100 p-2 px-3 text-sm font-medium text-gray-700 hover:bg-gray-200" aria-label="User menu">
+            <div
+              className="flex items-center space-x-2 rounded-full bg-gray-100 p-2 px-3 text-sm font-medium text-gray-700 hover:bg-gray-200"
+              aria-label="User menu"
+            >
               <User className="h-5 w-5" aria-hidden="true" />
               <span>Pramudya</span>
             </div>
           </div>
         </header>
-        <main id="main-content" className="flex-1 overflow-y-auto p-4 lg:p-6" tabIndex={-1}>
+        <main
+          id="main-content"
+          className="flex-1 overflow-y-auto p-4 lg:p-6"
+          tabIndex={-1}
+        >
           {children}
         </main>
       </div>
