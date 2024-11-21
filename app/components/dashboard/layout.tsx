@@ -1,5 +1,6 @@
-import { Link } from "@remix-run/react";
-import { useState } from "react";
+import { Link, useLocation, useParams } from "@remix-run/react";
+import { useCallback, useEffect, useState } from "react";
+import throttle from "lodash/throttle";
 import {
   Bell,
   Calendar,
@@ -12,6 +13,7 @@ import {
   Brain,
   PillBottle,
   Phone,
+  LogOut,
 } from "lucide-react";
 
 export default function DashboardLayout({
@@ -20,6 +22,8 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }): JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState("Beranda");
+  const location = useLocation();
 
   const menuItems = [
     { icon: Home, label: "Beranda", path: "/dashboard/beranda" },
@@ -33,7 +37,23 @@ export default function DashboardLayout({
     { icon: Brain, label: "Diagnosis AI", path: "/dashboard/fitur-ai" },
     { icon: Phone, label: "Telemedicine", path: "/dashboard/telemedicine" },
     { icon: Settings, label: "Pengaturan", path: "/dashboard/pengaturan" },
+    { icon: LogOut, label: "Keluar", path: "/dashboard/keluar" },
   ];
+
+  const throttleSetActiveIndex = useCallback(
+    throttle((pathname: string) => {
+      const activeItem = menuItems.find((item) => item.path === pathname);
+      if (activeItem) {
+        setActiveIndex(activeItem.label);
+      }
+    }, 1000),
+    [],
+  );
+
+  useEffect(() => {
+    throttleSetActiveIndex(location.pathname);
+    return () => throttleSetActiveIndex.cancel();
+  }, [location.pathname, throttleSetActiveIndex]);
 
   return (
     <div className="flex min-h-screen bg-gray-50">
@@ -58,8 +78,12 @@ export default function DashboardLayout({
             {menuItems.map((item) => (
               <Link
                 key={item.path}
-                to={item.path}
-                className="group flex items-center rounded-lg px-4 py-2 text-sm font-medium text-gray-600 transition-all duration-200 hover:bg-emerald-50 hover:text-emerald-600"
+                to={item.label === "Keluar" ? "/" : item.path}
+                className={`group flex items-center rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-emerald-50 hover:text-emerald-600 ${
+                  item.label === "Keluar"
+                    ? "text-red-500 hover:bg-red-50 hover:text-red-600"
+                    : ""
+                } ${activeIndex === item.label ? "bg-emerald-50 text-emerald-600" : "text-gray-600"}`}
                 aria-label={item.label}
               >
                 <item.icon className="mr-3 h-5 w-5" aria-hidden="true" />
