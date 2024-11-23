@@ -3,8 +3,8 @@ import Footer from "~/common/footer";
 import Header from "~/common/header";
 import Fitur from "~/components/layanan/fitur";
 import LayananKesehatanTerlengkap from "~/components/layanan/layanan-kesehatan-terlengkap";
-import { MetaFunction } from "@remix-run/react";
-import { useRef } from "react";
+import { MetaFunction, useSearchParams } from "@remix-run/react";
+import { useEffect, useRef } from "react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -30,9 +30,16 @@ export const meta: MetaFunction = () => {
 };
 export default function Beranda() {
   const fiturRef = useRef<HTMLElement>(null);
+  const [searchParams] = useSearchParams();
   const scrollToFitur = () => {
     fiturRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    if (searchParams.get("scrollToFitur") === "true") {
+      setTimeout(scrollToFitur, 100)
+    }
+  }, [searchParams]);
   return (
     <>
       <Header />

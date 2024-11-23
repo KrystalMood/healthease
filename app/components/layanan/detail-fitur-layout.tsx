@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Link, useNavigate } from "@remix-run/react";
 import { ArrowLeft } from "lucide-react";
 import { DataFiturProps } from "~/types/layanan";
 
@@ -15,16 +15,21 @@ export default function DetailFiturLayout({
   manfaat,
   steps,
 }: DetailFiturLayoutProps) {
+
+  const navigate = useNavigate();
+  const handleBack = () => {
+    navigate("/layanan/beranda?scrollToFitur=true")
+  };
   return (
     <main className="min-h-screen bg-gray-50/50">
       <div className="mx-auto w-[90%] py-24">
-        <Link
-          to="/layanan"
+        <button
+          onClick={handleBack}
           className="mb-8 inline-flex items-center text-emerald-600 hover:text-emerald-700"
         >
           <ArrowLeft className="mr-2 h-5 w-5" />
           Kembali ke Layanan
-        </Link>
+        </button>
 
         <article className="rounded-xl bg-white p-8 shadow-sm">
           <h1 className="text-4xl font-bold text-emerald-800">{fitur.title}</h1>
